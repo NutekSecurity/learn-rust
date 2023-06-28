@@ -1,0 +1,296 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Installation - learn-rust</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../chapter_1/first_of_all.html"><strong aria-hidden="true">1.</strong> First of all</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter_1/prerequisites.html"><strong aria-hidden="true">1.1.</strong> Prerequisites</a></li><li class="chapter-item expanded "><a href="../chapter_1/installing.html" class="active"><strong aria-hidden="true">1.2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../chapter_1/problems.html"><strong aria-hidden="true">1.3.</strong> Problems occur</a></li></ol></li><li class="chapter-item expanded "><a href="../tour/drumroll.html"><strong aria-hidden="true">2.</strong> Tour de Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tour/simple_variables.html"><strong aria-hidden="true">2.1.</strong> Simple variables</a></li><li class="chapter-item expanded "><a href="../tour/complex_types.html"><strong aria-hidden="true">2.2.</strong> Complex types</a></li><li class="chapter-item expanded "><a href="../tour/methods_on_types.html"><strong aria-hidden="true">2.3.</strong> Methods on types</a></li><li class="chapter-item expanded "><a href="../tour/options.html"><strong aria-hidden="true">2.4.</strong> Options</a></li><li class="chapter-item expanded "><a href="../tour/result.html"><strong aria-hidden="true">2.5.</strong> Result</a></li><li class="chapter-item expanded "><a href="../tour/if_let.html"><strong aria-hidden="true">2.6.</strong> if let</a></li><li class="chapter-item expanded "><a href="../tour/match.html"><strong aria-hidden="true">2.7.</strong> match</a></li><li class="chapter-item expanded "><a href="../tour/ownership.html"><strong aria-hidden="true">2.8.</strong> Ownership</a></li><li class="chapter-item expanded "><a href="../tour/errors.html"><strong aria-hidden="true">2.9.</strong> Error handling</a></li><li class="chapter-item expanded "><a href="../tour/user_input.html"><strong aria-hidden="true">2.10.</strong> User input</a></li><li class="chapter-item expanded "><a href="../tour/argv.html"><strong aria-hidden="true">2.11.</strong> Command line arguments</a></li><li class="chapter-item expanded "><a href="../tour/functions.html"><strong aria-hidden="true">2.12.</strong> Functions</a></li><li class="chapter-item expanded "><a href="../tour/loops.html"><strong aria-hidden="true">2.13.</strong> Loops</a></li><li class="chapter-item expanded "><a href="../tour/if_else.html"><strong aria-hidden="true">2.14.</strong> if, else if, else</a></li><li class="chapter-item expanded "><a href="../tour/mut_variables.html"><strong aria-hidden="true">2.15.</strong> On variables and mutability</a></li><li class="chapter-item expanded "><a href="../tour/generic_types.html"><strong aria-hidden="true">2.16.</strong> Generic types</a></li><li class="chapter-item expanded "><a href="../tour/traits.html"><strong aria-hidden="true">2.17.</strong> Traits</a></li><li class="chapter-item expanded "><a href="../tour/testing.html"><strong aria-hidden="true">2.18.</strong> Testing code</a></li><li class="chapter-item expanded "><a href="../tour/iterators.html"><strong aria-hidden="true">2.19.</strong> Iterators</a></li><li class="chapter-item expanded "><a href="../tour/closures.html"><strong aria-hidden="true">2.20.</strong> Closures</a></li><li class="chapter-item expanded "><a href="../tour/smart_pointers.html"><strong aria-hidden="true">2.21.</strong> Intelligent pointers</a></li><li class="chapter-item expanded "><a href="../tour/public.html"><strong aria-hidden="true">2.22.</strong> Public</a></li><li class="chapter-item expanded "><a href="../tour/mod.html"><strong aria-hidden="true">2.23.</strong> mod</a></li><li class="chapter-item expanded "><a href="../tour/files.html"><strong aria-hidden="true">2.24.</strong> Working with files</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">learn-rust</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="installing-rust-neovim-nvim-command-and-tmux"><a class="header" href="#installing-rust-neovim-nvim-command-and-tmux">Installing Rust, Neovim (nvim command) and tmux</a></h1>
+<h2 id="installing-rust"><a class="header" href="#installing-rust">Installing Rust</a></h2>
+<p>To install Rust on you Mac follow this procedure:</p>
+<ol>
+<li>
+<p>Visit official Rust installation <a href="https://www.rust-lang.org/tools/install">webpage</a></p>
+</li>
+<li>
+<p>Use</p>
+<pre><code class="language-shell">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+</code></pre>
+<p>command in your Terminal window (<code>cmd</code>+<code>spacebar</code> and type <code>Terminal.app</code> then copy and paste it (<code>cmd</code>+<code>c</code> and <code>cmd</code>+<code>v</code>), confirm with <code>Enter ↩</code> and follow on-screen instructions.</p>
+</li>
+</ol>
+<p>Rust is a multi-paradigm, general-purpose programming language that emphasizes performance, safety, and concurrency. It enforces memory safety--ensuring that all references point to valid memory--without requiring the use of a garbage collector or reference counting present in other memory-safe languages. To simultaneously enforce memory safety and prevent concurrent data races, its &quot;borrow checker&quot; tracks the object lifetime of all references in a program during compilation.</p>
+<p>Rust's syntax is similar to that of C and C++, although many of its features are more influenced by functional programming languages. It aims to support concurrent systems programming, which has inspired a feature set emphasizing safety, control of memory layout, and concurrency. Safety in Rust includes the guarantees of memory safety, type safety, and lack of data races.</p>
+<p>Rust is a relatively new language, but it has been growing in popularity in recent years. It is used in a variety of applications, including operating systems, web servers, and embedded systems.</p>
+<p>Here are some of the benefits of using Rust:</p>
+<ul>
+<li><strong>Performance:</strong> Rust is a very fast language, and it can be used to create high-performance applications.</li>
+<li><strong>Safety:</strong> Rust is a memory-safe language, which means that it is very difficult to create memory errors.</li>
+<li><strong>Concurrency:</strong> Rust is a very good language for concurrent programming, and it can be used to create highly concurrent applications.</li>
+<li><strong>Expressiveness:</strong> Rust is a very expressive language, and it allows you to write code that is both clear and concise.</li>
+</ul>
+<p>If you are looking for a high-performance, safe, and concurrent programming language, then Rust is a good choice.</p>
+<h2 id="install-neovim"><a class="header" href="#install-neovim">Install Neovim</a></h2>
+<p>Using Homebrew</p>
+<ol>
+<li>
+<p>Utilising the same Terminal window type</p>
+<pre><code>brew install neovim
+</code></pre>
+</li>
+<li>
+<p>You can start it with <code>nvim</code> command, but don't do this now (in case, you don't know how to exit, press <code>esc</code>, and <code>:q!</code></p>
+</li>
+</ol>
+<p>Neovim is a free and open-source text editor based on Vim. It is a highly customizable and extensible editor that can be used for a variety of tasks, including programming, writing, and editing text.</p>
+<p>Neovim is a fork of Vim, which was created in 1991. Vim is a very powerful text editor, but it can be difficult to learn and use. Neovim aims to improve on Vim by making it more modern and user-friendly.</p>
+<p>Some of the features of Neovim include:</p>
+<ul>
+<li>A built-in terminal emulator</li>
+<li>A Lua plugin API</li>
+<li>A modern syntax highlighting engine</li>
+<li>A built-in debugger</li>
+<li>A built-in file manager</li>
+</ul>
+<p>Neovim is a great choice for users who are looking for a powerful and customizable text editor. It is also a good choice for users who are familiar with Vim and want to try a more modern version of the editor.</p>
+<p>Here are some of the benefits of using Neovim:</p>
+<ul>
+<li><strong>Extensibility:</strong> Neovim is highly extensible, and it can be customized to meet your specific needs.</li>
+<li><strong>Performance:</strong> Neovim is a very fast editor, and it can be used to edit large files without any problems.</li>
+<li><strong>Customization:</strong> Neovim can be customized to look and feel the way you want it to.</li>
+<li><strong>Community:</strong> There is a large and active community of Neovim users, and there are many plugins and resources available.</li>
+</ul>
+<p>If you are looking for a powerful and customizable text editor, then Neovim is a good choice.</p>
+<h2 id="install-tmux"><a class="header" href="#install-tmux">Install tmux:</a></h2>
+<ol>
+<li>
+<p>With steps the same as above:</p>
+<pre><code>brew install tmux
+</code></pre>
+</li>
+<li>
+<p>Skip tmux if you're using Warp, but use with <strong>Kitty</strong>, <strong>Alacritty</strong> or <strong>Terminal</strong></p>
+</li>
+</ol>
+<p>Tmux is a terminal multiplexer, which means that it allows you to run multiple terminal sessions in a single window. This can be useful for a variety of tasks, such as:</p>
+<ul>
+<li>Running multiple applications at the same time</li>
+<li>Splitting your terminal into multiple panes</li>
+<li>Detaching and attaching sessions</li>
+<li>Sharing sessions with others</li>
+</ul>
+<p>Tmux is a powerful tool that can be used to improve your productivity. It is especially useful for users who work on remote servers or who need to run multiple applications at the same time.</p>
+<p>Here are some of the benefits of using tmux:</p>
+<ul>
+<li><strong>Productivity:</strong> Tmux can help you to be more productive by allowing you to run multiple applications at the same time and by keeping your sessions organized.</li>
+<li><strong>Portability:</strong> Tmux sessions can be saved and restored, so you can take your work with you wherever you go.</li>
+<li><strong>Extensibility:</strong> Tmux is highly extensible, and there are many plugins available that can add new features and functionality.</li>
+</ul>
+<p>If you are looking for a way to improve your productivity and to make your terminal more powerful, then tmux is a good choice.</p>
+<p>Here are some of the basic commands that you can use to interact with tmux:</p>
+<ul>
+<li><code>tmux</code>: Start a new tmux session.</li>
+<li><code>tmux attach</code>: Attach to an existing tmux session.</li>
+<li><code>tmux new-window</code>: Create a new window in the current session.</li>
+<li><code>tmux split-window</code>: Split the current window horizontally or vertically.</li>
+<li><code>tmux select-pane</code>: Select a pane in the current window.</li>
+<li><code>tmux kill-session</code>: Kill the current tmux session.</li>
+<li><code>Ctrl + b</code> then <code>%</code> to split vertically</li>
+<li><code>Ctrl + b</code> then <code>&quot;</code> to split horizontally</li>
+<li><code>Ctrl + b</code> then <code>o</code> to cycle through panes</li>
+<li><code>Ctrl + b</code> then <code>q</code> to show pane numbers</li>
+<li><code>Ctrl + b</code> then <code>x</code> to kill the current pane</li>
+<li><code>Ctrl + b</code> then <code>z</code> to toggle zoom on the current pane</li>
+<li><code>Ctrl + b</code> then <code>Arrow Key</code> to move the current pane</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../chapter_1/prerequisites.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../chapter_1/problems.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../chapter_1/prerequisites.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../chapter_1/problems.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

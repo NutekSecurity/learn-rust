@@ -1,0 +1,264 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Simple variables - learn-rust</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../chapter_1/first_of_all.html"><strong aria-hidden="true">1.</strong> First of all</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter_1/prerequisites.html"><strong aria-hidden="true">1.1.</strong> Prerequisites</a></li><li class="chapter-item expanded "><a href="../chapter_1/installing.html"><strong aria-hidden="true">1.2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../chapter_1/problems.html"><strong aria-hidden="true">1.3.</strong> Problems occur</a></li></ol></li><li class="chapter-item expanded "><a href="../tour/drumroll.html"><strong aria-hidden="true">2.</strong> Tour de Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tour/simple_variables.html" class="active"><strong aria-hidden="true">2.1.</strong> Simple variables</a></li><li class="chapter-item expanded "><a href="../tour/complex_types.html"><strong aria-hidden="true">2.2.</strong> Complex types</a></li><li class="chapter-item expanded "><a href="../tour/methods_on_types.html"><strong aria-hidden="true">2.3.</strong> Methods on types</a></li><li class="chapter-item expanded "><a href="../tour/options.html"><strong aria-hidden="true">2.4.</strong> Options</a></li><li class="chapter-item expanded "><a href="../tour/result.html"><strong aria-hidden="true">2.5.</strong> Result</a></li><li class="chapter-item expanded "><a href="../tour/if_let.html"><strong aria-hidden="true">2.6.</strong> if let</a></li><li class="chapter-item expanded "><a href="../tour/match.html"><strong aria-hidden="true">2.7.</strong> match</a></li><li class="chapter-item expanded "><a href="../tour/ownership.html"><strong aria-hidden="true">2.8.</strong> Ownership</a></li><li class="chapter-item expanded "><a href="../tour/errors.html"><strong aria-hidden="true">2.9.</strong> Error handling</a></li><li class="chapter-item expanded "><a href="../tour/user_input.html"><strong aria-hidden="true">2.10.</strong> User input</a></li><li class="chapter-item expanded "><a href="../tour/argv.html"><strong aria-hidden="true">2.11.</strong> Command line arguments</a></li><li class="chapter-item expanded "><a href="../tour/functions.html"><strong aria-hidden="true">2.12.</strong> Functions</a></li><li class="chapter-item expanded "><a href="../tour/loops.html"><strong aria-hidden="true">2.13.</strong> Loops</a></li><li class="chapter-item expanded "><a href="../tour/if_else.html"><strong aria-hidden="true">2.14.</strong> if, else if, else</a></li><li class="chapter-item expanded "><a href="../tour/mut_variables.html"><strong aria-hidden="true">2.15.</strong> On variables and mutability</a></li><li class="chapter-item expanded "><a href="../tour/generic_types.html"><strong aria-hidden="true">2.16.</strong> Generic types</a></li><li class="chapter-item expanded "><a href="../tour/traits.html"><strong aria-hidden="true">2.17.</strong> Traits</a></li><li class="chapter-item expanded "><a href="../tour/testing.html"><strong aria-hidden="true">2.18.</strong> Testing code</a></li><li class="chapter-item expanded "><a href="../tour/iterators.html"><strong aria-hidden="true">2.19.</strong> Iterators</a></li><li class="chapter-item expanded "><a href="../tour/closures.html"><strong aria-hidden="true">2.20.</strong> Closures</a></li><li class="chapter-item expanded "><a href="../tour/smart_pointers.html"><strong aria-hidden="true">2.21.</strong> Intelligent pointers</a></li><li class="chapter-item expanded "><a href="../tour/public.html"><strong aria-hidden="true">2.22.</strong> Public</a></li><li class="chapter-item expanded "><a href="../tour/mod.html"><strong aria-hidden="true">2.23.</strong> mod</a></li><li class="chapter-item expanded "><a href="../tour/files.html"><strong aria-hidden="true">2.24.</strong> Working with files</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">learn-rust</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="defining-simple-variables-in-rust"><a class="header" href="#defining-simple-variables-in-rust">Defining simple variables in Rust</a></h1>
+<p>In Rust, you can define variables using the <code>let</code> keyword. Rust is a statically-typed language, which means that you need to specify the type of the variable explicitly or let the compiler infer it based on the assigned value. Here's an example of defining variables in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    // Variable with explicit type annotation
+    let number: i32 = 42;
+
+    // Variable with type inference
+    let name = &quot;John&quot;;
+
+    // Mutable variable
+    let mut counter = 0;
+    counter += 1;
+
+    // Printing variables
+    println!(&quot;Number: {}&quot;, number);
+    println!(&quot;Name: {}&quot;, name);
+    println!(&quot;Counter: {}&quot;, counter);
+}</code></pre></pre>
+<p>In this example, we define three variables:</p>
+<ol>
+<li><code>number</code> is an <code>i32</code> variable with an explicit type annotation. It is assigned the value <code>42</code>.</li>
+<li><code>name</code> is a string variable. The type is inferred by the compiler based on the assigned value <code>&quot;John&quot;</code>.</li>
+<li><code>counter</code> is a mutable variable defined with the <code>mut</code> keyword. It is initially assigned the value <code>0</code> and then incremented by <code>1</code>.</li>
+</ol>
+<p>Rust provides various built-in simple types, including:</p>
+<ul>
+<li>Signed integers: <code>i8</code>, <code>i16</code>, <code>i32</code>, <code>i64</code>, <code>i128</code>, <code>isize</code></li>
+<li>Unsigned integers: <code>u8</code>, <code>u16</code>, <code>u32</code>, <code>u64</code>, <code>u128</code>, <code>usize</code></li>
+<li>Floating-point numbers: <code>f32</code>, <code>f64</code></li>
+<li>Booleans: <code>bool</code> (either <code>true</code> or <code>false</code>)</li>
+<li>Characters: <code>char</code></li>
+<li>Strings: <code>String</code> (a growable, UTF-8 encoded string) and string slices (<code>&amp;str</code>)</li>
+<li>Arrays: [<code>T; N]</code> (a fixed-size array of elements of type <code>T</code>, where <code>N</code> is the length)</li>
+<li>Tuples: <code>(T1, T2, ...)</code></li>
+</ul>
+<p>These are just a few examples of the simple types available in Rust. You can also create your own custom types using structs, enums, and more.</p>
+<p>Remember to add the necessary dependencies and dependencies versions in your Cargo.toml file before running the Rust program.</p>
+<p>To define a variable in Rust, you use the <code>let</code> keyword. The <code>let</code> keyword is followed by the name of the variable, the type of the variable, and the value of the variable. For example, the following code defines a variable called <code>x</code> of type <code>i32</code>, and assigns the value <code>10</code> to it:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x: i32 = 10;
+<span class="boring">}</span></code></pre></pre>
+<p>Rust has a variety of simple types that you can use to define variables. Some of the most common simple types are:</p>
+<ul>
+<li><code>i32</code>: This type represents a 32-bit signed integer.</li>
+<li><code>u32</code>: This type represents a 32-bit unsigned integer.</li>
+<li><code>f64</code>: This type represents a 64-bit floating-point number.</li>
+<li><code>char</code>: This type represents a single Unicode character.</li>
+<li><code>bool</code>: This type represents a Boolean value, which can be either <code>true</code> or <code>false</code>.</li>
+</ul>
+<p>You can also define variables of more complex types, such as structs, enums, and arrays.</p>
+<p>Here is a table of some of the simple types in Rust, along with their sizes and ranges:</p>
+<div class="table-wrapper"><table><thead><tr><th>Type</th><th>Size</th><th>Range</th></tr></thead><tbody>
+<tr><td><code>i8</code></td><td>1 byte</td><td>-128 to 127</td></tr>
+<tr><td><code>i16</code></td><td>2 bytes</td><td>-32,768 to 32,767</td></tr>
+<tr><td><code>i32</code></td><td>4 bytes</td><td>-2,147,483,648 to 2,147,483,647</td></tr>
+<tr><td><code>i64</code></td><td>8 bytes</td><td>-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td></tr>
+<tr><td><code>u8</code></td><td>1 byte</td><td>0 to 255</td></tr>
+<tr><td><code>u16</code></td><td>2 bytes</td><td>0 to 65,535</td></tr>
+<tr><td><code>u32</code></td><td>4 bytes</td><td>0 to 4,294,967,295</td></tr>
+<tr><td><code>u64</code></td><td>8 bytes</td><td>0 to 18,446,744,073,709,551,615</td></tr>
+<tr><td><code>f32</code></td><td>4 bytes</td><td>Approximately ±3.402823466 × 10^38</td></tr>
+<tr><td><code>f64</code></td><td>8 bytes</td><td>Approximately ±1.7976931348623157 × 10^308</td></tr>
+<tr><td><code>char</code></td><td>4 bytes</td><td>Unicode code point</td></tr>
+<tr><td><code>bool</code></td><td>1 byte</td><td><code>true</code> or <code>false</code></td></tr>
+</tbody></table>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../tour/drumroll.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../tour/complex_types.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../tour/drumroll.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../tour/complex_types.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

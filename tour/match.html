@@ -1,0 +1,325 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>match - learn-rust</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../chapter_1/first_of_all.html"><strong aria-hidden="true">1.</strong> First of all</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter_1/prerequisites.html"><strong aria-hidden="true">1.1.</strong> Prerequisites</a></li><li class="chapter-item expanded "><a href="../chapter_1/installing.html"><strong aria-hidden="true">1.2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../chapter_1/problems.html"><strong aria-hidden="true">1.3.</strong> Problems occur</a></li></ol></li><li class="chapter-item expanded "><a href="../tour/drumroll.html"><strong aria-hidden="true">2.</strong> Tour de Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tour/simple_variables.html"><strong aria-hidden="true">2.1.</strong> Simple variables</a></li><li class="chapter-item expanded "><a href="../tour/complex_types.html"><strong aria-hidden="true">2.2.</strong> Complex types</a></li><li class="chapter-item expanded "><a href="../tour/methods_on_types.html"><strong aria-hidden="true">2.3.</strong> Methods on types</a></li><li class="chapter-item expanded "><a href="../tour/options.html"><strong aria-hidden="true">2.4.</strong> Options</a></li><li class="chapter-item expanded "><a href="../tour/result.html"><strong aria-hidden="true">2.5.</strong> Result</a></li><li class="chapter-item expanded "><a href="../tour/if_let.html"><strong aria-hidden="true">2.6.</strong> if let</a></li><li class="chapter-item expanded "><a href="../tour/match.html" class="active"><strong aria-hidden="true">2.7.</strong> match</a></li><li class="chapter-item expanded "><a href="../tour/ownership.html"><strong aria-hidden="true">2.8.</strong> Ownership</a></li><li class="chapter-item expanded "><a href="../tour/errors.html"><strong aria-hidden="true">2.9.</strong> Error handling</a></li><li class="chapter-item expanded "><a href="../tour/user_input.html"><strong aria-hidden="true">2.10.</strong> User input</a></li><li class="chapter-item expanded "><a href="../tour/argv.html"><strong aria-hidden="true">2.11.</strong> Command line arguments</a></li><li class="chapter-item expanded "><a href="../tour/functions.html"><strong aria-hidden="true">2.12.</strong> Functions</a></li><li class="chapter-item expanded "><a href="../tour/loops.html"><strong aria-hidden="true">2.13.</strong> Loops</a></li><li class="chapter-item expanded "><a href="../tour/if_else.html"><strong aria-hidden="true">2.14.</strong> if, else if, else</a></li><li class="chapter-item expanded "><a href="../tour/mut_variables.html"><strong aria-hidden="true">2.15.</strong> On variables and mutability</a></li><li class="chapter-item expanded "><a href="../tour/generic_types.html"><strong aria-hidden="true">2.16.</strong> Generic types</a></li><li class="chapter-item expanded "><a href="../tour/traits.html"><strong aria-hidden="true">2.17.</strong> Traits</a></li><li class="chapter-item expanded "><a href="../tour/testing.html"><strong aria-hidden="true">2.18.</strong> Testing code</a></li><li class="chapter-item expanded "><a href="../tour/iterators.html"><strong aria-hidden="true">2.19.</strong> Iterators</a></li><li class="chapter-item expanded "><a href="../tour/closures.html"><strong aria-hidden="true">2.20.</strong> Closures</a></li><li class="chapter-item expanded "><a href="../tour/smart_pointers.html"><strong aria-hidden="true">2.21.</strong> Intelligent pointers</a></li><li class="chapter-item expanded "><a href="../tour/public.html"><strong aria-hidden="true">2.22.</strong> Public</a></li><li class="chapter-item expanded "><a href="../tour/mod.html"><strong aria-hidden="true">2.23.</strong> mod</a></li><li class="chapter-item expanded "><a href="../tour/files.html"><strong aria-hidden="true">2.24.</strong> Working with files</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">learn-rust</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="match"><a class="header" href="#match">match</a></h1>
+<p>The <code>match</code> expression in Rust allows you to perform pattern matching and execute different code blocks based on the matched pattern. It is a powerful construct that can handle various use cases. Here are some examples that demonstrate the usage of <code>match</code> in Rust:</p>
+<p>Example 1: Matching on Enum Variants</p>
+<pre><pre class="playground"><code class="language-rust">enum Direction {
+    Up,
+    Down,
+    Left,
+    Right,
+}
+
+fn print_direction(direction: Direction) {
+    match direction {
+        Direction::Up =&gt; println!(&quot;Moving Up&quot;),
+        Direction::Down =&gt; println!(&quot;Moving Down&quot;),
+        Direction::Left =&gt; println!(&quot;Moving Left&quot;),
+        Direction::Right =&gt; println!(&quot;Moving Right&quot;),
+    }
+}
+
+fn main() {
+    let direction = Direction::Left;
+    print_direction(direction);
+}</code></pre></pre>
+<p>In this example, we define an <code>enum</code> called <code>Direction</code> with four variants. The <code>print_direction</code> function takes a <code>Direction</code> value and uses <code>match</code> to match on the different enum variants. Depending on the variant, it executes the corresponding code block.</p>
+<p>Example 2: Matching on Numeric Ranges</p>
+<pre><pre class="playground"><code class="language-rust">fn classify_number(num: i32) {
+    match num {
+        1..=9 =&gt; println!(&quot;Single Digit&quot;),
+        10..=99 =&gt; println!(&quot;Double Digit&quot;),
+        100..=999 =&gt; println!(&quot;Triple Digit&quot;),
+        _ =&gt; println!(&quot;Greater than three digits&quot;),
+    }
+}
+
+fn main() {
+    let num = 42;
+    classify_number(num);
+}</code></pre></pre>
+<p>In this example, the <code>classify_number</code> function takes an <code>i32</code> value and uses <code>match</code> to match on different ranges of numbers. It uses the <code>..=</code> operator to specify inclusive ranges. The <code>_</code> (underscore) is a catch-all pattern that matches any value. Depending on the matched pattern, the corresponding code block is executed.</p>
+<p>Example 3: Destructuring Tuples</p>
+<pre><pre class="playground"><code class="language-rust">fn process_tuple(tuple: (i32, bool)) {
+    match tuple {
+        (0, true) =&gt; println!(&quot;Tuple matches pattern (0, true)&quot;),
+        (x, true) =&gt; println!(&quot;Tuple matches pattern (_, true), x = {}&quot;, x),
+        (x, false) =&gt; println!(&quot;Tuple matches pattern (_, false), x = {}&quot;, x),
+    }
+}
+
+fn main() {
+    let tuple1 = (0, true);
+    let tuple2 = (42, true);
+    let tuple3 = (123, false);
+
+    process_tuple(tuple1);
+    process_tuple(tuple2);
+    process_tuple(tuple3);
+}</code></pre></pre>
+<p>In this example, the <code>process_tuple</code> function takes a tuple of type <code>(i32, bool)</code> and uses <code>match</code> to destructure the tuple and match on different patterns. It demonstrates the flexibility of pattern matching with tuples.</p>
+<p>These examples illustrate a few use cases of the <code>match</code> expression in Rust. It allows you to handle different patterns and execute code blocks based on the matched pattern, making it a versatile construct for controlling program flow and handling complex scenarios.</p>
+<p>Here are some use cases for the <code>match</code> expression in Rust, along with code examples:</p>
+<ul>
+<li>
+<p><strong>Matching on enum variants:</strong> The <code>match</code> expression can be used to match on the variants of an enum. For example, the following code matches on the variants of the <code>Color</code> enum:</p>
+<pre><pre class="playground"><code class="language-rust">enum Color {
+    Red,
+    Green,
+    Blue,
+}
+
+fn main() {
+    let color = Color::Red;
+
+    match color {
+        Color::Red =&gt; println!(&quot;The color is red&quot;),
+        Color::Green =&gt; println!(&quot;The color is green&quot;),
+        Color::Blue =&gt; println!(&quot;The color is blue&quot;),
+    }
+}</code></pre></pre>
+</li>
+<li>
+<p><strong>Matching on literal values:</strong> The <code>match</code> expression can also be used to match on literal values. For example, the following code matches on the value of the variable <code>number</code>:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let number = 10;
+
+    match number {
+        1 =&gt; println!(&quot;The number is 1&quot;),
+        2 =&gt; println!(&quot;The number is 2&quot;),
+        3 =&gt; println!(&quot;The number is 3&quot;),
+        _ =&gt; println!(&quot;The number is not 1, 2, or 3&quot;),
+    }
+}</code></pre></pre>
+</li>
+<li>
+<p><strong>Matching on ranges:</strong> The <code>match</code> expression can also be used to match on ranges. For example, the following code matches on the value of the variable <code>age</code>:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let age = 18;
+
+    match age {
+        18..=21 =&gt; println!(&quot;The age is between 18 and 21&quot;),
+        22..=30 =&gt; println!(&quot;The age is between 22 and 30&quot;),
+        _ =&gt; println!(&quot;The age is not between 18 and 30&quot;),
+    }
+}</code></pre></pre>
+</li>
+<li>
+<p><strong>Matching on patterns:</strong> The <code>match</code> expression can also be used to match on patterns. Patterns are a way to describe the structure of a value. For example, the following code matches on the value of the variable <code>person</code>:</p>
+<pre><pre class="playground"><code class="language-rust">  struct Person {
+      name: String,
+      age: i32,
+  }
+  
+  fn main() {
+      let person = Person {
+          name: &quot;Bard&quot;.to_string(),
+          age: 30,
+      };
+ 
+    let name = format!(&quot;{}&quot;, &quot;Bard&quot;);
+
+      match person {
+          Person { name: name, .. } =&gt; println!(&quot;The person's name is Bard&quot;),
+          _ =&gt; println!(&quot;The person's name is not Bard&quot;),
+      }
+  }</code></pre></pre>
+</li>
+</ul>
+<p>The <code>match</code> expression is a powerful tool for pattern matching in Rust. It can be used to match on enum variants, literal values, ranges, and patterns.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../tour/if_let.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../tour/ownership.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../tour/if_let.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../tour/ownership.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

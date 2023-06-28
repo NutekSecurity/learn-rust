@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded "><a href="chapter_1/first_of_all.html"><strong aria-hidden="true">1.</strong> First of all</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_1/prerequisites.html"><strong aria-hidden="true">1.1.</strong> Prerequisites</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded "><a href="chapter_1/first_of_all.html"><strong aria-hidden="true">1.</strong> First of all</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_1/prerequisites.html"><strong aria-hidden="true">1.1.</strong> Prerequisites</a></li><li class="chapter-item expanded "><a href="chapter_1/installing.html"><strong aria-hidden="true">1.2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="chapter_1/problems.html"><strong aria-hidden="true">1.3.</strong> Problems occur</a></li></ol></li><li class="chapter-item expanded "><a href="tour/drumroll.html"><strong aria-hidden="true">2.</strong> Tour de Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tour/simple_variables.html"><strong aria-hidden="true">2.1.</strong> Simple variables</a></li><li class="chapter-item expanded "><a href="tour/complex_types.html"><strong aria-hidden="true">2.2.</strong> Complex types</a></li><li class="chapter-item expanded "><a href="tour/methods_on_types.html"><strong aria-hidden="true">2.3.</strong> Methods on types</a></li><li class="chapter-item expanded "><a href="tour/options.html"><strong aria-hidden="true">2.4.</strong> Options</a></li><li class="chapter-item expanded "><a href="tour/result.html"><strong aria-hidden="true">2.5.</strong> Result</a></li><li class="chapter-item expanded "><a href="tour/if_let.html"><strong aria-hidden="true">2.6.</strong> if let</a></li><li class="chapter-item expanded "><a href="tour/match.html"><strong aria-hidden="true">2.7.</strong> match</a></li><li class="chapter-item expanded "><a href="tour/ownership.html"><strong aria-hidden="true">2.8.</strong> Ownership</a></li><li class="chapter-item expanded "><a href="tour/errors.html"><strong aria-hidden="true">2.9.</strong> Error handling</a></li><li class="chapter-item expanded "><a href="tour/user_input.html"><strong aria-hidden="true">2.10.</strong> User input</a></li><li class="chapter-item expanded "><a href="tour/argv.html"><strong aria-hidden="true">2.11.</strong> Command line arguments</a></li><li class="chapter-item expanded "><a href="tour/functions.html"><strong aria-hidden="true">2.12.</strong> Functions</a></li><li class="chapter-item expanded "><a href="tour/loops.html"><strong aria-hidden="true">2.13.</strong> Loops</a></li><li class="chapter-item expanded "><a href="tour/if_else.html"><strong aria-hidden="true">2.14.</strong> if, else if, else</a></li><li class="chapter-item expanded "><a href="tour/mut_variables.html"><strong aria-hidden="true">2.15.</strong> On variables and mutability</a></li><li class="chapter-item expanded "><a href="tour/generic_types.html"><strong aria-hidden="true">2.16.</strong> Generic types</a></li><li class="chapter-item expanded "><a href="tour/traits.html"><strong aria-hidden="true">2.17.</strong> Traits</a></li><li class="chapter-item expanded "><a href="tour/testing.html"><strong aria-hidden="true">2.18.</strong> Testing code</a></li><li class="chapter-item expanded "><a href="tour/iterators.html"><strong aria-hidden="true">2.19.</strong> Iterators</a></li><li class="chapter-item expanded "><a href="tour/closures.html"><strong aria-hidden="true">2.20.</strong> Closures</a></li><li class="chapter-item expanded "><a href="tour/smart_pointers.html"><strong aria-hidden="true">2.21.</strong> Intelligent pointers</a></li><li class="chapter-item expanded "><a href="tour/public.html"><strong aria-hidden="true">2.22.</strong> Public</a></li><li class="chapter-item expanded "><a href="tour/mod.html"><strong aria-hidden="true">2.23.</strong> mod</a></li><li class="chapter-item expanded "><a href="tour/files.html"><strong aria-hidden="true">2.24.</strong> Working with files</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -164,6 +164,1928 @@
 <li>{optional2} <a href="https://alacritty.org">Alacritty</a> - good terminal choice if you plan on using tmux</li>
 <li>{optional3} <a href="https://sw.kovidgoyal.net/kitty/">Kitty</a> - another good terminal app</li>
 <li>{option} Get all that, it's free. Except GitHub Copilot, which cost 10$ a month, but is a good support AI code generation tool (work in Neovim and VS Code)</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installing-rust-neovim-nvim-command-and-tmux"><a class="header" href="#installing-rust-neovim-nvim-command-and-tmux">Installing Rust, Neovim (nvim command) and tmux</a></h1>
+<h2 id="installing-rust"><a class="header" href="#installing-rust">Installing Rust</a></h2>
+<p>To install Rust on you Mac follow this procedure:</p>
+<ol>
+<li>
+<p>Visit official Rust installation <a href="https://www.rust-lang.org/tools/install">webpage</a></p>
+</li>
+<li>
+<p>Use</p>
+<pre><code class="language-shell">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+</code></pre>
+<p>command in your Terminal window (<code>cmd</code>+<code>spacebar</code> and type <code>Terminal.app</code> then copy and paste it (<code>cmd</code>+<code>c</code> and <code>cmd</code>+<code>v</code>), confirm with <code>Enter ↩</code> and follow on-screen instructions.</p>
+</li>
+</ol>
+<p>Rust is a multi-paradigm, general-purpose programming language that emphasizes performance, safety, and concurrency. It enforces memory safety--ensuring that all references point to valid memory--without requiring the use of a garbage collector or reference counting present in other memory-safe languages. To simultaneously enforce memory safety and prevent concurrent data races, its &quot;borrow checker&quot; tracks the object lifetime of all references in a program during compilation.</p>
+<p>Rust's syntax is similar to that of C and C++, although many of its features are more influenced by functional programming languages. It aims to support concurrent systems programming, which has inspired a feature set emphasizing safety, control of memory layout, and concurrency. Safety in Rust includes the guarantees of memory safety, type safety, and lack of data races.</p>
+<p>Rust is a relatively new language, but it has been growing in popularity in recent years. It is used in a variety of applications, including operating systems, web servers, and embedded systems.</p>
+<p>Here are some of the benefits of using Rust:</p>
+<ul>
+<li><strong>Performance:</strong> Rust is a very fast language, and it can be used to create high-performance applications.</li>
+<li><strong>Safety:</strong> Rust is a memory-safe language, which means that it is very difficult to create memory errors.</li>
+<li><strong>Concurrency:</strong> Rust is a very good language for concurrent programming, and it can be used to create highly concurrent applications.</li>
+<li><strong>Expressiveness:</strong> Rust is a very expressive language, and it allows you to write code that is both clear and concise.</li>
+</ul>
+<p>If you are looking for a high-performance, safe, and concurrent programming language, then Rust is a good choice.</p>
+<h2 id="install-neovim"><a class="header" href="#install-neovim">Install Neovim</a></h2>
+<p>Using Homebrew</p>
+<ol>
+<li>
+<p>Utilising the same Terminal window type</p>
+<pre><code>brew install neovim
+</code></pre>
+</li>
+<li>
+<p>You can start it with <code>nvim</code> command, but don't do this now (in case, you don't know how to exit, press <code>esc</code>, and <code>:q!</code></p>
+</li>
+</ol>
+<p>Neovim is a free and open-source text editor based on Vim. It is a highly customizable and extensible editor that can be used for a variety of tasks, including programming, writing, and editing text.</p>
+<p>Neovim is a fork of Vim, which was created in 1991. Vim is a very powerful text editor, but it can be difficult to learn and use. Neovim aims to improve on Vim by making it more modern and user-friendly.</p>
+<p>Some of the features of Neovim include:</p>
+<ul>
+<li>A built-in terminal emulator</li>
+<li>A Lua plugin API</li>
+<li>A modern syntax highlighting engine</li>
+<li>A built-in debugger</li>
+<li>A built-in file manager</li>
+</ul>
+<p>Neovim is a great choice for users who are looking for a powerful and customizable text editor. It is also a good choice for users who are familiar with Vim and want to try a more modern version of the editor.</p>
+<p>Here are some of the benefits of using Neovim:</p>
+<ul>
+<li><strong>Extensibility:</strong> Neovim is highly extensible, and it can be customized to meet your specific needs.</li>
+<li><strong>Performance:</strong> Neovim is a very fast editor, and it can be used to edit large files without any problems.</li>
+<li><strong>Customization:</strong> Neovim can be customized to look and feel the way you want it to.</li>
+<li><strong>Community:</strong> There is a large and active community of Neovim users, and there are many plugins and resources available.</li>
+</ul>
+<p>If you are looking for a powerful and customizable text editor, then Neovim is a good choice.</p>
+<h2 id="install-tmux"><a class="header" href="#install-tmux">Install tmux:</a></h2>
+<ol>
+<li>
+<p>With steps the same as above:</p>
+<pre><code>brew install tmux
+</code></pre>
+</li>
+<li>
+<p>Skip tmux if you're using Warp, but use with <strong>Kitty</strong>, <strong>Alacritty</strong> or <strong>Terminal</strong></p>
+</li>
+</ol>
+<p>Tmux is a terminal multiplexer, which means that it allows you to run multiple terminal sessions in a single window. This can be useful for a variety of tasks, such as:</p>
+<ul>
+<li>Running multiple applications at the same time</li>
+<li>Splitting your terminal into multiple panes</li>
+<li>Detaching and attaching sessions</li>
+<li>Sharing sessions with others</li>
+</ul>
+<p>Tmux is a powerful tool that can be used to improve your productivity. It is especially useful for users who work on remote servers or who need to run multiple applications at the same time.</p>
+<p>Here are some of the benefits of using tmux:</p>
+<ul>
+<li><strong>Productivity:</strong> Tmux can help you to be more productive by allowing you to run multiple applications at the same time and by keeping your sessions organized.</li>
+<li><strong>Portability:</strong> Tmux sessions can be saved and restored, so you can take your work with you wherever you go.</li>
+<li><strong>Extensibility:</strong> Tmux is highly extensible, and there are many plugins available that can add new features and functionality.</li>
+</ul>
+<p>If you are looking for a way to improve your productivity and to make your terminal more powerful, then tmux is a good choice.</p>
+<p>Here are some of the basic commands that you can use to interact with tmux:</p>
+<ul>
+<li><code>tmux</code>: Start a new tmux session.</li>
+<li><code>tmux attach</code>: Attach to an existing tmux session.</li>
+<li><code>tmux new-window</code>: Create a new window in the current session.</li>
+<li><code>tmux split-window</code>: Split the current window horizontally or vertically.</li>
+<li><code>tmux select-pane</code>: Select a pane in the current window.</li>
+<li><code>tmux kill-session</code>: Kill the current tmux session.</li>
+<li><code>Ctrl + b</code> then <code>%</code> to split vertically</li>
+<li><code>Ctrl + b</code> then <code>&quot;</code> to split horizontally</li>
+<li><code>Ctrl + b</code> then <code>o</code> to cycle through panes</li>
+<li><code>Ctrl + b</code> then <code>q</code> to show pane numbers</li>
+<li><code>Ctrl + b</code> then <code>x</code> to kill the current pane</li>
+<li><code>Ctrl + b</code> then <code>z</code> to toggle zoom on the current pane</li>
+<li><code>Ctrl + b</code> then <code>Arrow Key</code> to move the current pane</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="problems-with-moving-unity-project-from-windows-to-mac"><a class="header" href="#problems-with-moving-unity-project-from-windows-to-mac">Problems with moving Unity project from Windows to Mac</a></h1>
+<p>When putting my Unity Engine project under git source control, sending it to the upstream server and downloading it to my Mac, everything turned blue. Maybe it's pink and because of the fog that's set to be there and a cooler of lights it turned blue, and in fact it's pink, what would mean that my shaders and textures was not properly loaded and that I have to manually change everything to mimic the Universal Render Pipeline settings. And I think I will quit Unity once for all. It's insane! It can't be that, that when I switch computers, or give my project to someone else it suddenly turn pink/blue or freaking white.</p>
+<blockquote>
+<p>Update: I manage to get my project working on Mac, but that's all about Unity, for the purpose of this book, we'll be using another game engine.</p>
+</blockquote>
+<p>So it's done. Unity Engine is gone from my Mac. What a hack! It's still on my Windows, but that's not important. I need new game engine. I can chose from <em>Unreal Engine</em> which is an overkill, and significantly to advance for my good old Air, and Godot Engine, which compared to Unreal, is just a toy. Or is it?</p>
+<p>And I went to the site <a href="https://alternativeto.net/">Alternativeto.net</a>, I typed Unreal Engine, and I was presented with 91 different game engines. There even was one written in Rust, that enabled the user to write scripts in Rust, but that wouldn't be what I would like to do, because I do not want to write scripts in Rust, I want a world and a reusable engine that can power my first, and also second game. For that I need a totally different approach than scripting. So, I leave it to you, if you want to write games in Rust game engine - <a href="https://fyrox.rs/">Fyrox</a>. And if you want just a framework, which is more know to other applications then chose - <a href="https://bevyengine.org/">Bevy</a></p>
+<p>What I found else is <em>Monogame</em> written in Mono and it's using C#, and there wasn't a mention, but there was LÖVR, virtual reality, but I do not own a headset, so I aim into <strong>LÖVE</strong> instead.</p>
+<blockquote>
+<p>I have finnaly solved the issue with removing dynamic resolution from my scene camera.</p>
+</blockquote>
+<p>Now it's time for some theory, with examples. Run your <code>Visual Studio Code</code>, or your good new and shiny <code>Neovim</code> and prepare for a long tour.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="drumroll"><a class="header" href="#drumroll">Drumroll</a></h1>
+<p>During this chapter, you will be familiarised with Rust programming language and it's main concepts and grammar. Feel free to experiment in <em>nvim</em>.</p>
+<p>If you're already familiar with Rust, or you do know much about programming and do not care about Rust terminology, feel free to skip this chapter and get back as soon as you wish so...</p>
+<p><strong>P.S.</strong> You can run examples right in the browser to see the output, but you can't edit them.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="defining-simple-variables-in-rust"><a class="header" href="#defining-simple-variables-in-rust">Defining simple variables in Rust</a></h1>
+<p>In Rust, you can define variables using the <code>let</code> keyword. Rust is a statically-typed language, which means that you need to specify the type of the variable explicitly or let the compiler infer it based on the assigned value. Here's an example of defining variables in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    // Variable with explicit type annotation
+    let number: i32 = 42;
+
+    // Variable with type inference
+    let name = &quot;John&quot;;
+
+    // Mutable variable
+    let mut counter = 0;
+    counter += 1;
+
+    // Printing variables
+    println!(&quot;Number: {}&quot;, number);
+    println!(&quot;Name: {}&quot;, name);
+    println!(&quot;Counter: {}&quot;, counter);
+}</code></pre></pre>
+<p>In this example, we define three variables:</p>
+<ol>
+<li><code>number</code> is an <code>i32</code> variable with an explicit type annotation. It is assigned the value <code>42</code>.</li>
+<li><code>name</code> is a string variable. The type is inferred by the compiler based on the assigned value <code>&quot;John&quot;</code>.</li>
+<li><code>counter</code> is a mutable variable defined with the <code>mut</code> keyword. It is initially assigned the value <code>0</code> and then incremented by <code>1</code>.</li>
+</ol>
+<p>Rust provides various built-in simple types, including:</p>
+<ul>
+<li>Signed integers: <code>i8</code>, <code>i16</code>, <code>i32</code>, <code>i64</code>, <code>i128</code>, <code>isize</code></li>
+<li>Unsigned integers: <code>u8</code>, <code>u16</code>, <code>u32</code>, <code>u64</code>, <code>u128</code>, <code>usize</code></li>
+<li>Floating-point numbers: <code>f32</code>, <code>f64</code></li>
+<li>Booleans: <code>bool</code> (either <code>true</code> or <code>false</code>)</li>
+<li>Characters: <code>char</code></li>
+<li>Strings: <code>String</code> (a growable, UTF-8 encoded string) and string slices (<code>&amp;str</code>)</li>
+<li>Arrays: [<code>T; N]</code> (a fixed-size array of elements of type <code>T</code>, where <code>N</code> is the length)</li>
+<li>Tuples: <code>(T1, T2, ...)</code></li>
+</ul>
+<p>These are just a few examples of the simple types available in Rust. You can also create your own custom types using structs, enums, and more.</p>
+<p>Remember to add the necessary dependencies and dependencies versions in your Cargo.toml file before running the Rust program.</p>
+<p>To define a variable in Rust, you use the <code>let</code> keyword. The <code>let</code> keyword is followed by the name of the variable, the type of the variable, and the value of the variable. For example, the following code defines a variable called <code>x</code> of type <code>i32</code>, and assigns the value <code>10</code> to it:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x: i32 = 10;
+<span class="boring">}</span></code></pre></pre>
+<p>Rust has a variety of simple types that you can use to define variables. Some of the most common simple types are:</p>
+<ul>
+<li><code>i32</code>: This type represents a 32-bit signed integer.</li>
+<li><code>u32</code>: This type represents a 32-bit unsigned integer.</li>
+<li><code>f64</code>: This type represents a 64-bit floating-point number.</li>
+<li><code>char</code>: This type represents a single Unicode character.</li>
+<li><code>bool</code>: This type represents a Boolean value, which can be either <code>true</code> or <code>false</code>.</li>
+</ul>
+<p>You can also define variables of more complex types, such as structs, enums, and arrays.</p>
+<p>Here is a table of some of the simple types in Rust, along with their sizes and ranges:</p>
+<div class="table-wrapper"><table><thead><tr><th>Type</th><th>Size</th><th>Range</th></tr></thead><tbody>
+<tr><td><code>i8</code></td><td>1 byte</td><td>-128 to 127</td></tr>
+<tr><td><code>i16</code></td><td>2 bytes</td><td>-32,768 to 32,767</td></tr>
+<tr><td><code>i32</code></td><td>4 bytes</td><td>-2,147,483,648 to 2,147,483,647</td></tr>
+<tr><td><code>i64</code></td><td>8 bytes</td><td>-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td></tr>
+<tr><td><code>u8</code></td><td>1 byte</td><td>0 to 255</td></tr>
+<tr><td><code>u16</code></td><td>2 bytes</td><td>0 to 65,535</td></tr>
+<tr><td><code>u32</code></td><td>4 bytes</td><td>0 to 4,294,967,295</td></tr>
+<tr><td><code>u64</code></td><td>8 bytes</td><td>0 to 18,446,744,073,709,551,615</td></tr>
+<tr><td><code>f32</code></td><td>4 bytes</td><td>Approximately ±3.402823466 × 10^38</td></tr>
+<tr><td><code>f64</code></td><td>8 bytes</td><td>Approximately ±1.7976931348623157 × 10^308</td></tr>
+<tr><td><code>char</code></td><td>4 bytes</td><td>Unicode code point</td></tr>
+<tr><td><code>bool</code></td><td>1 byte</td><td><code>true</code> or <code>false</code></td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="complex-types-in-rust"><a class="header" href="#complex-types-in-rust">Complex types in Rust</a></h1>
+<p>Here are some of the complex types in Rust, along with code examples:</p>
+<ul>
+<li>
+<p><strong>Structs:</strong> Structs are used to group together related data. For example, the following code defines a struct called <code>Person</code> that has two fields, <code>name</code> and <code>age</code>:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct Person {
+    name: String,
+    age: i32,
+}
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p><strong>Enums:</strong> Enums are used to represent a set of possible values. For example, the following code defines an enum called <code>Color</code> that has three possible values, <code>Red</code>, <code>Green</code>, and <code>Blue</code>:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>enum Color {
+    Red,
+    Green,
+    Blue,
+}
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p><strong>Arrays:</strong> Arrays are used to store a fixed-size collection of elements. For example, the following code defines an array called <code>numbers</code> that can store up to 10 integers:</p>
+<p><code>let mut numbers: [i32; 10] = [0; 10];</code></p>
+</li>
+<li>
+<p><strong>Tuples:</strong> Tuples are used to store a heterogeneous collection of elements. For example, the following code defines a tuple called <code>coordinates</code> that stores two elements, <code>x</code> and <code>y</code>:</p>
+<p><code>let coordinates = (10, 20);</code></p>
+</li>
+</ul>
+<p>Here is a table of some of the complex types in Rust, along with their code examples:</p>
+<div class="table-wrapper"><table><thead><tr><th>Type</th><th>Code Example</th></tr></thead><tbody>
+<tr><td><code>Struct</code></td><td><code>struct Person { name: String, age: i32 }</code></td></tr>
+<tr><td><code>Enum</code></td><td><code>enum Color { Red, Green, Blue }</code></td></tr>
+<tr><td><code>Array</code></td><td><code>let mut numbers: [i32; 10] = [0; 10];</code></td></tr>
+<tr><td><code>Tuple</code></td><td><code>let coordinates = (10, 20);</code></td></tr>
+</tbody></table>
+</div>
+<p>Rust provides several complex types that allow you to represent more structured and sophisticated data. Here are some examples of complex types in Rust:</p>
+<ol>
+<li>Structs: Structs allow you to define your own custom data types with named fields.</li>
+</ol>
+<pre><pre class="playground"><code class="language-rust">struct Person {
+    name: String,
+    age: u32,
+    is_student: bool,
+}
+
+fn main() {
+    let person = Person {
+        name: String::from(&quot;John&quot;),
+        age: 25,
+        is_student: true,
+    };
+
+    println!(&quot;Name: {}&quot;, person.name);
+    println!(&quot;Age: {}&quot;, person.age);
+    println!(&quot;Is student: {}&quot;, person.is_student);
+}</code></pre></pre>
+<p>In this example, we define a <code>Person</code> struct with fields <code>name</code>, <code>age</code>, and <code>is_student</code>. We create an instance of the struct and access its fields using dot notation.</p>
+<ol start="2">
+<li>Enums: Enums allow you to define a type that can have different variants.</li>
+</ol>
+<pre><pre class="playground"><code class="language-rust">enum Result&lt;T, E&gt; {
+    Ok(T),
+    Err(E),
+}
+
+fn divide(a: i32, b: i32) -&gt; Result&lt;i32, String&gt; {
+    if b != 0 {
+        Result::Ok(a / b)
+    } else {
+        Result::Err(String::from(&quot;Division by zero&quot;))
+    }
+}
+
+fn main() {
+    let result = divide(10, 2);
+    match result {
+        Result::Ok(value) =&gt; println!(&quot;Result: {}&quot;, value),
+        Result::Err(error) =&gt; println!(&quot;Error: {}&quot;, error),
+    }
+}</code></pre></pre>
+<p>In this example, we define a generic <code>Result</code> enum that can either be <code>Ok</code> with a value of type <code>T</code> or <code>Err</code> with a value of type <code>E</code>. We use this enum to represent the result of a division operation, returning either the quotient or an error message.</p>
+<ol start="3">
+<li>Vectors: Vectors are dynamically-sized, growable arrays that allow you to store multiple values of the same type.</li>
+</ol>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut numbers: Vec&lt;i32&gt; = Vec::new();
+    numbers.push(10);
+    numbers.push(20);
+    numbers.push(30);
+
+    for number in &amp;numbers {
+        println!(&quot;{}&quot;, number);
+    }
+}</code></pre></pre>
+<p>In this example, we create a <code>numbers</code> vector and add three elements to it. We then iterate over the vector using a for loop and print each element.</p>
+<p>These are just a few examples of the complex types available in Rust. Rust also provides features like tuples, arrays, slices, hash maps, and more that allow you to work with complex data structures and collections.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="methods-on-types"><a class="header" href="#methods-on-types">Methods on types</a></h1>
+<p>In Rust, you can define methods on types (including structs) using the <code>impl</code> keyword. Methods allow you to associate behavior with a particular type. Here are some code examples of defining methods on structs in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    // Method to calculate the area of the rectangle
+    fn area(&amp;self) -&gt; u32 {
+        self.width * self.height
+    }
+
+    // Method to check if the rectangle is a square
+    fn is_square(&amp;self) -&gt; bool {
+        self.width == self.height
+    }
+
+    // Associated function to create a new square
+    fn square(size: u32) -&gt; Rectangle {
+        Rectangle {
+            width: size,
+            height: size,
+        }
+    }
+}
+
+fn main() {
+    let rectangle = Rectangle {
+        width: 10,
+        height: 20,
+    };
+
+    println!(&quot;Area: {}&quot;, rectangle.area());
+    println!(&quot;Is Square: {}&quot;, rectangle.is_square());
+
+    let square = Rectangle::square(15);
+    println!(&quot;Square Area: {}&quot;, square.area());
+    println!(&quot;Is Square: {}&quot;, square.is_square());
+}</code></pre></pre>
+<p>In this example, we define a <code>Rectangle</code> struct with <code>width</code> and <code>height</code> fields. We then define three methods using <code>impl</code>:</p>
+<ol>
+<li><code>area</code> calculates the area of the rectangle by multiplying the width and height.</li>
+<li><code>is_square</code> checks if the rectangle is a square by comparing the width and height.</li>
+<li><code>square</code> is an associated function (similar to a static method) that creates a new square <code>Rectangle</code> by setting the same value for the width and height.</li>
+</ol>
+<p>In the <code>main</code> function, we create an instance of the <code>Rectangle</code> struct and call the methods using the dot notation.</p>
+<p>Note that the <code>&amp;self</code> parameter in the method signatures represents a reference to the struct instance. This allows the methods to access the fields of the struct.</p>
+<p>You can define methods on other types as well, including enums and trait objects. The <code>impl</code> keyword is used to associate the methods with the respective type, allowing you to encapsulate behavior and functionality within the type itself.</p>
+<p>Here is an example of a method on a struct in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">struct Person {
+    name: String,
+    age: i32,
+}
+
+impl Person {
+    fn say_hello(&amp;self) {
+        println!(&quot;Hello, my name is {}!&quot;, self.name);
+    }
+}
+
+fn main() {
+    let person = Person {
+        name: &quot;Bard&quot;.to_string(),
+        age: 30,
+    };
+
+    person.say_hello();
+}</code></pre></pre>
+<p>In this example, the <code>Person</code> struct has a method called <code>say_hello()</code>. The <code>say_hello()</code> method takes no arguments and returns no value. The <code>say_hello()</code> method prints a greeting to the console, including the name of the person.</p>
+<p>The <code>impl</code> keyword is used to define methods on structs. The <code>impl</code> keyword is followed by the name of the struct, and then the body of the method. The body of the method can contain any code that you would like to execute.</p>
+<p>In this example, the <code>say_hello()</code> method takes a reference to the <code>Person</code> struct as its argument. This allows the <code>say_hello()</code> method to access the data in the <code>Person</code> struct.</p>
+<p>The <code>say_hello()</code> method prints a greeting to the console, including the name of the person. The greeting is printed using the <code>println!()</code> macro.</p>
+<p>The <code>main()</code> function is the entry point for the Rust program. The <code>main()</code> function creates a new <code>Person</code> struct and then calls the <code>say_hello()</code> method on the <code>Person</code> struct.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="options"><a class="header" href="#options">Options</a></h1>
+<p>Here is an example of an option in Rust:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>  enum Option&lt;T&gt; {
+      Some(T),
+      None,
+  }
+<span class="boring">}</span></code></pre></pre>
+<p>The <code>Option</code> enum represents an optional value. The <code>Option</code> enum has two variants: <code>Some</code> and <code>None</code>. The <code>Some</code> variant contains a value of type <code>T</code>, and the <code>None</code> variant does not contain a value.</p>
+<p>Here is an example of how to use the <code>Option</code> enum:</p>
+<pre><pre class="playground"><code class="language-rust">  fn divide(numerator: i32, denominator: i32) -&gt; Option&lt;i32&gt; {
+      if denominator == 0 {
+          return None;
+      } else {
+          return Some(numerator / denominator);
+      }
+  }
+  
+  fn main() {
+      let result = divide(10, 2);
+  
+      if let Some(x) = result {
+          println!(&quot;The result is {}&quot;, x);
+      } else {
+          println!(&quot;Division by zero&quot;);
+      }
+  }</code></pre></pre>
+<p>In this example, the <code>divide()</code> function takes two integers as arguments and returns an <code>Option</code>. The <code>divide()</code> function returns <code>None</code> if the denominator is 0, and it returns <code>Some(x)</code> if the denominator is not 0, where <code>x</code> is the result of the division.</p>
+<p>The <code>main()</code> function calls the <code>divide()</code> function and then checks the result. If the result is <code>Some</code>, the <code>main()</code> function prints the result to the console. If the result is <code>None</code>, the <code>main()</code> function prints a message to the console.</p>
+<p>In Rust, the <code>Option</code> type is used to represent the presence or absence of a value. It is commonly used when a value may or may not exist. Here are some code examples demonstrating the usage of <code>Option</code> in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">fn divide(a: i32, b: i32) -&gt; Option&lt;i32&gt; {
+    if b != 0 {
+        Some(a / b)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let result = divide(10, 2);
+    match result {
+        Some(value) =&gt; println!(&quot;Result: {}&quot;, value),
+        None =&gt; println!(&quot;Cannot divide by zero&quot;),
+    }
+
+    let invalid_result = divide(10, 0);
+    match invalid_result {
+        Some(value) =&gt; println!(&quot;Result: {}&quot;, value),
+        None =&gt; println!(&quot;Cannot divide by zero&quot;),
+    }
+}</code></pre></pre>
+<p>In this example, the <code>divide</code> function takes two <code>i32</code> values as parameters and returns an <code>Option&lt;i32&gt;</code>. If the divisor (<code>b</code>) is not zero, the function returns <code>Some(quotient)</code> containing the result of the division. Otherwise, it returns <code>None</code> to indicate an invalid division.</p>
+<p>In the <code>main</code> function, we call <code>divide</code> twice with different arguments. We use a <code>match</code> expression to handle the <code>Option</code> result. If the result is <code>Some(value)</code>, we print the result. If it is <code>None</code>, we print an appropriate error message.</p>
+<p>Here's another example that demonstrates the usage of <code>Option</code> with string manipulation:</p>
+<pre><pre class="playground"><code class="language-rust">fn get_first_char(s: &amp;str) -&gt; Option&lt;char&gt; {
+    s.chars().next()
+}
+
+fn main() {
+    let word = &quot;Hello&quot;;
+    let first_char = get_first_char(word);
+
+    match first_char {
+        Some(c) =&gt; println!(&quot;First character: {}&quot;, c),
+        None =&gt; println!(&quot;Empty string&quot;),
+    }
+}</code></pre></pre>
+<p>In this example, the <code>get_first_char</code> function takes a string slice (<code>&amp;str</code>) and returns an <code>Option&lt;char&gt;</code> representing the first character of the string. If the string is not empty, the function returns <code>Some(character)</code>. Otherwise, it returns <code>None</code>.</p>
+<p>In the <code>main</code> function, we call <code>get_first_char</code> with a string. We use a <code>match</code> expression to handle the <code>Option</code> result. If the result is <code>Some(c)</code>, we print the first character. If it is <code>None</code>, we print an appropriate message.</p>
+<p>These examples demonstrate how the <code>Option</code> type can be used to handle situations where a value may or may not exist, providing a safe and explicit way to handle potential absence of values in Rust.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="result"><a class="header" href="#result">Result</a></h1>
+<p>In Rust, the <code>Result</code> type is used to represent the result of an operation that can either succeed (<code>Ok</code>) or fail (<code>Err</code>). It is commonly used for error handling and propagating errors throughout the program. Here are some code examples demonstrating the usage of <code>Result</code> in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">fn divide(a: i32, b: i32) -&gt; Result&lt;i32, String&gt; {
+    if b != 0 {
+        Ok(a / b)
+    } else {
+        Err(String::from(&quot;Division by zero&quot;))
+    }
+}
+
+fn main() {
+    let result = divide(10, 2);
+    match result {
+        Ok(value) =&gt; println!(&quot;Result: {}&quot;, value),
+        Err(error) =&gt; println!(&quot;Error: {}&quot;, error),
+    }
+
+    let invalid_result = divide(10, 0);
+    match invalid_result {
+        Ok(value) =&gt; println!(&quot;Result: {}&quot;, value),
+        Err(error) =&gt; println!(&quot;Error: {}&quot;, error),
+    }
+}</code></pre></pre>
+<p>In this example, the <code>divide</code> function takes two <code>i32</code> values as parameters and returns a <code>Result&lt;i32, String&gt;</code>. If the divisor (<code>b</code>) is not zero, the function returns <code>Ok(quotient)</code> containing the result of the division. Otherwise, it returns <code>Err(error)</code> with an error message.</p>
+<p>In the <code>main</code> function, we call <code>divide</code> twice with different arguments. We use a <code>match</code> expression to handle the <code>Result</code> returned by the function. If the result is <code>Ok(value)</code>, we print the result. If it is <code>Err(error)</code>, we print the error message.</p>
+<p>Here's another example that demonstrates the usage of <code>Result</code> with file I/O operations:</p>
+<pre><pre class="playground"><code class="language-rust">use std::fs::File;
+use std::io::{self, Read};
+
+fn read_file_contents(filename: &amp;str) -&gt; Result&lt;String, io::Error&gt; {
+    let mut file = File::open(filename)?;
+    let mut contents = String::new();
+    file.read_to_string(&amp;mut contents)?;
+    Ok(contents)
+}
+
+fn main() {
+    let result = read_file_contents(&quot;example.txt&quot;);
+    match result {
+        Ok(contents) =&gt; println!(&quot;File contents: {}&quot;, contents),
+        Err(error) =&gt; println!(&quot;Error: {}&quot;, error),
+    }
+}</code></pre></pre>
+<p>In this example, the <code>read_file_contents</code> function takes a filename as a parameter and returns a <code>Result&lt;String, io::Error&gt;</code>. It attempts to open the file, read its contents, and return the contents as a <code>String</code> if successful. Otherwise, it returns <code>Err(error)</code> with an <code>io::Error</code> indicating the encountered error.</p>
+<p>In the <code>main</code> function, we call <code>read_file_contents</code> with a filename. We use a <code>match</code> expression to handle the <code>Result</code> returned by the function. If the result is <code>Ok(contents)</code>, we print the file contents. If it is <code>Err(error)</code>, we print the encountered error.</p>
+<p>These examples illustrate how the <code>Result</code> type can be used to handle operations that may produce successful results or errors, providing a robust error handling mechanism in Rust.</p>
+<p>Here is an example of the Result return type in Rust:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>  enum Result&lt;T, E&gt; {
+      Ok(T),
+      Err(E),
+  }
+<span class="boring">}</span></code></pre></pre>
+<p>The <code>Result</code> enum represents the result of a computation that can either be successful (Ok variant) or unsuccessful (Err variant). The <code>T</code> and <code>E</code> type parameters represent the types of successful and unsuccessful results, respectively.</p>
+<p>Here is an example of how to use the <code>Result</code> enum:</p>
+<pre><pre class="playground"><code class="language-rust">  fn divide(numerator: i32, denominator: i32) -&gt; Result&lt;i32, String&gt; {
+      if denominator == 0 {
+          return Err(format!(&quot;{}&quot;, &quot;Division by zero&quot;));
+      } else {
+          return Ok(numerator / denominator);
+      }
+  }
+  
+  fn main() {
+      let result = divide(10, 2);
+  
+      if let Ok(x) = result {
+          println!(&quot;The result is {}&quot;, x);
+      } else {
+          println!(&quot;Error: {}&quot;, result.err().unwrap());
+      }
+  }</code></pre></pre>
+<p>In this example, the <code>divide()</code> function takes two integers as arguments and returns a <code>Result</code>. The <code>divide()</code> function returns <code>Err</code> if the denominator is 0, and it returns <code>Ok(x)</code> if the denominator is not 0, where <code>x</code> is the result of the division.</p>
+<p>The <code>main()</code> function calls the <code>divide()</code> function and then checks the result. If the result is <code>Ok</code>, the <code>main()</code> function prints the result to the console. If the result is <code>Err</code>, the <code>main()</code> function prints the error message to the console. </p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="if-let"><a class="header" href="#if-let">if let</a></h1>
+<p>Here is an example of the <code>if let</code> expression in Rust:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>  let x: Option&lt;i32&gt; = Some(10);
+  
+  if let Some(value) = x {
+      println!(&quot;The value is {}&quot;, value);
+  } else {
+      println!(&quot;The value is None&quot;);
+  }
+<span class="boring">}</span></code></pre></pre>
+<p>In this example, the <code>if let</code> expression checks if the value of <code>x</code> is <code>Some</code>. If the value of <code>x</code> is <code>Some</code>, the <code>if let</code> expression binds the value of <code>x</code> to the variable <code>value</code> and then executes the block of code inside the <code>if</code> statement. If the value of <code>x</code> is <code>None</code>, the <code>if let</code> expression skips the block of code inside the <code>if</code> statement and executes the else block.</p>
+<p>The <code>if let</code> expression is a concise way to check for the presence of a value and then execute code based on the presence or absence of the value.</p>
+<p>Here is another example of the <code>if let</code> expression:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>  let y: Option&lt;String&gt; = Some(String::from(&quot;Hello, world!&quot;));
+  
+  if let Some(value) = y {
+      println!(&quot;The value is {}&quot;, value);
+  } else {
+      println!(&quot;The value is None&quot;);
+  }
+<span class="boring">}</span></code></pre></pre>
+<p>In this example, the <code>if let</code> expression checks if the value of <code>y</code> is <code>Some</code>. If the value of <code>y</code> is <code>Some</code>, the <code>if let</code> expression binds the value of <code>y</code> to the variable <code>value</code> and then executes the block of code inside the <code>if</code> statement. If the value of <code>y</code> is <code>None</code>, the <code>if let</code> expression skips the block of code inside the <code>if</code> statement and executes the else block.</p>
+<p>In Rust, the <code>if let</code> expression allows you to match and destructure a single pattern when handling a specific <code>Option</code> or <code>Result</code> variant. It provides a concise way to handle a specific case without the need for a full <code>match</code> expression. Here are some examples that demonstrate the usage of <code>if let</code> in Rust:</p>
+<p>Example 1: Handling an <code>Option</code> variant with <code>if let</code>:</p>
+<pre><pre class="playground"><code class="language-rust">fn process_option_value(value: Option&lt;i32&gt;) {
+    if let Some(num) = value {
+        println!(&quot;Value: {}&quot;, num);
+    } else {
+        println!(&quot;No value present&quot;);
+    }
+}
+
+fn main() {
+    let some_value = Some(42);
+    process_option_value(some_value);
+
+    let none_value: Option&lt;i32&gt; = None;
+    process_option_value(none_value);
+}</code></pre></pre>
+<p>In this example, the <code>process_option_value</code> function takes an <code>Option&lt;i32&gt;</code> value and uses <code>if let</code> to match the <code>Some(num)</code> pattern. If the value is <code>Some</code>, it binds the inner value to the variable <code>num</code> and executes the corresponding block. If the value is <code>None</code>, it executes the else block.</p>
+<p>Example 2: Handling a specific <code>Result</code> variant with <code>if let</code>:</p>
+<pre><pre class="playground"><code class="language-rust">fn process_result_value(value: Result&lt;i32, &amp;str&gt;) {
+    if let Ok(num) = value {
+        println!(&quot;Value: {}&quot;, num);
+    } else {
+        println!(&quot;Error: {}&quot;, value.unwrap_err());
+    }
+}
+
+fn main() {
+    let success_result = Ok(42);
+    process_result_value(success_result);
+
+    let error_result: Result&lt;i32, &amp;str&gt; = Err(&quot;An error occurred&quot;);
+    process_result_value(error_result);
+}</code></pre></pre>
+<p>In this example, the <code>process_result_value</code> function takes a <code>Result&lt;i32, &amp;str&gt;</code> value and uses <code>if let</code> to match the <code>Ok(num)</code> pattern. If the value is <code>Ok</code>, it binds the inner value to the variable <code>num</code> and executes the corresponding block. If the value is <code>Err</code>, it executes the else block and prints the error message using <code>unwrap_err()</code>.</p>
+<p>The <code>if let</code> expression is useful when you want to handle a specific case in a concise manner without explicitly matching all possible cases using a <code>match</code> expression. It simplifies the code and reduces the boilerplate when you only need to handle a specific pattern.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="match"><a class="header" href="#match">match</a></h1>
+<p>The <code>match</code> expression in Rust allows you to perform pattern matching and execute different code blocks based on the matched pattern. It is a powerful construct that can handle various use cases. Here are some examples that demonstrate the usage of <code>match</code> in Rust:</p>
+<p>Example 1: Matching on Enum Variants</p>
+<pre><pre class="playground"><code class="language-rust">enum Direction {
+    Up,
+    Down,
+    Left,
+    Right,
+}
+
+fn print_direction(direction: Direction) {
+    match direction {
+        Direction::Up =&gt; println!(&quot;Moving Up&quot;),
+        Direction::Down =&gt; println!(&quot;Moving Down&quot;),
+        Direction::Left =&gt; println!(&quot;Moving Left&quot;),
+        Direction::Right =&gt; println!(&quot;Moving Right&quot;),
+    }
+}
+
+fn main() {
+    let direction = Direction::Left;
+    print_direction(direction);
+}</code></pre></pre>
+<p>In this example, we define an <code>enum</code> called <code>Direction</code> with four variants. The <code>print_direction</code> function takes a <code>Direction</code> value and uses <code>match</code> to match on the different enum variants. Depending on the variant, it executes the corresponding code block.</p>
+<p>Example 2: Matching on Numeric Ranges</p>
+<pre><pre class="playground"><code class="language-rust">fn classify_number(num: i32) {
+    match num {
+        1..=9 =&gt; println!(&quot;Single Digit&quot;),
+        10..=99 =&gt; println!(&quot;Double Digit&quot;),
+        100..=999 =&gt; println!(&quot;Triple Digit&quot;),
+        _ =&gt; println!(&quot;Greater than three digits&quot;),
+    }
+}
+
+fn main() {
+    let num = 42;
+    classify_number(num);
+}</code></pre></pre>
+<p>In this example, the <code>classify_number</code> function takes an <code>i32</code> value and uses <code>match</code> to match on different ranges of numbers. It uses the <code>..=</code> operator to specify inclusive ranges. The <code>_</code> (underscore) is a catch-all pattern that matches any value. Depending on the matched pattern, the corresponding code block is executed.</p>
+<p>Example 3: Destructuring Tuples</p>
+<pre><pre class="playground"><code class="language-rust">fn process_tuple(tuple: (i32, bool)) {
+    match tuple {
+        (0, true) =&gt; println!(&quot;Tuple matches pattern (0, true)&quot;),
+        (x, true) =&gt; println!(&quot;Tuple matches pattern (_, true), x = {}&quot;, x),
+        (x, false) =&gt; println!(&quot;Tuple matches pattern (_, false), x = {}&quot;, x),
+    }
+}
+
+fn main() {
+    let tuple1 = (0, true);
+    let tuple2 = (42, true);
+    let tuple3 = (123, false);
+
+    process_tuple(tuple1);
+    process_tuple(tuple2);
+    process_tuple(tuple3);
+}</code></pre></pre>
+<p>In this example, the <code>process_tuple</code> function takes a tuple of type <code>(i32, bool)</code> and uses <code>match</code> to destructure the tuple and match on different patterns. It demonstrates the flexibility of pattern matching with tuples.</p>
+<p>These examples illustrate a few use cases of the <code>match</code> expression in Rust. It allows you to handle different patterns and execute code blocks based on the matched pattern, making it a versatile construct for controlling program flow and handling complex scenarios.</p>
+<p>Here are some use cases for the <code>match</code> expression in Rust, along with code examples:</p>
+<ul>
+<li>
+<p><strong>Matching on enum variants:</strong> The <code>match</code> expression can be used to match on the variants of an enum. For example, the following code matches on the variants of the <code>Color</code> enum:</p>
+<pre><pre class="playground"><code class="language-rust">enum Color {
+    Red,
+    Green,
+    Blue,
+}
+
+fn main() {
+    let color = Color::Red;
+
+    match color {
+        Color::Red =&gt; println!(&quot;The color is red&quot;),
+        Color::Green =&gt; println!(&quot;The color is green&quot;),
+        Color::Blue =&gt; println!(&quot;The color is blue&quot;),
+    }
+}</code></pre></pre>
+</li>
+<li>
+<p><strong>Matching on literal values:</strong> The <code>match</code> expression can also be used to match on literal values. For example, the following code matches on the value of the variable <code>number</code>:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let number = 10;
+
+    match number {
+        1 =&gt; println!(&quot;The number is 1&quot;),
+        2 =&gt; println!(&quot;The number is 2&quot;),
+        3 =&gt; println!(&quot;The number is 3&quot;),
+        _ =&gt; println!(&quot;The number is not 1, 2, or 3&quot;),
+    }
+}</code></pre></pre>
+</li>
+<li>
+<p><strong>Matching on ranges:</strong> The <code>match</code> expression can also be used to match on ranges. For example, the following code matches on the value of the variable <code>age</code>:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let age = 18;
+
+    match age {
+        18..=21 =&gt; println!(&quot;The age is between 18 and 21&quot;),
+        22..=30 =&gt; println!(&quot;The age is between 22 and 30&quot;),
+        _ =&gt; println!(&quot;The age is not between 18 and 30&quot;),
+    }
+}</code></pre></pre>
+</li>
+<li>
+<p><strong>Matching on patterns:</strong> The <code>match</code> expression can also be used to match on patterns. Patterns are a way to describe the structure of a value. For example, the following code matches on the value of the variable <code>person</code>:</p>
+<pre><pre class="playground"><code class="language-rust">  struct Person {
+      name: String,
+      age: i32,
+  }
+  
+  fn main() {
+      let person = Person {
+          name: &quot;Bard&quot;.to_string(),
+          age: 30,
+      };
+ 
+    let name = format!(&quot;{}&quot;, &quot;Bard&quot;);
+
+      match person {
+          Person { name: name, .. } =&gt; println!(&quot;The person's name is Bard&quot;),
+          _ =&gt; println!(&quot;The person's name is not Bard&quot;),
+      }
+  }</code></pre></pre>
+</li>
+</ul>
+<p>The <code>match</code> expression is a powerful tool for pattern matching in Rust. It can be used to match on enum variants, literal values, ranges, and patterns.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ownership"><a class="header" href="#ownership">Ownership</a></h1>
+<p>Here is an explanation of ownership in Rust with clear examples:</p>
+<ul>
+<li>
+<p><strong>What is ownership?</strong></p>
+<p>Ownership is a system in Rust that tracks how values are stored in memory. Every value in Rust has an owner, and that owner is responsible for ensuring that the value is dropped when it is no longer needed.</p>
+</li>
+<li>
+<p><strong>How does ownership work?</strong></p>
+<p>When a value is created, it is assigned to an owner. The owner can then be passed to other functions or variables, or it can be dropped. When the owner of a value goes out of scope, the value is dropped.</p>
+</li>
+<li>
+<p><strong>What are the rules of ownership?</strong></p>
+<p>There are three rules of ownership in Rust:</p>
+<pre><code>* **Each value has a single owner at a time.**
+* **When the owner of a value goes out of scope, the value is dropped.**
+* **The ownership of a value can be transferred to another variable.**
+</code></pre>
+</li>
+<li>
+<p><strong>Examples of ownership</strong></p>
+<p>Here are some examples of ownership in Rust:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x = 5; // x is the owner of the value 5
+
+let y = x; // y now owns the value 5, and x no longer owns it
+
+{
+  let z = x; // z also owns the value 5
+} // z goes out of scope, and the value 5 is dropped
+
+println!(&quot;{}&quot;, x); // x is still valid because it was moved to y
+<span class="boring">}</span></code></pre></pre>
+</li>
+</ul>
+<p>In this example, the variable <code>x</code> is the owner of the value 5. When the variable <code>y</code> is assigned the value of <code>x</code>, the ownership of the value 5 is transferred from <code>x</code> to <code>y</code>. The variable <code>x</code> no longer owns the value 5, and it can no longer be used.</p>
+<p>The variable <code>z</code> is also assigned the value of <code>x</code>. However, the variable <code>z</code> is declared in a block, and the block goes out of scope at the end of the line. When the block goes out of scope, the variable <code>z</code> is dropped, and the value 5 is dropped with it.</p>
+<p>The variable <code>x</code> is still valid because it was moved to <code>y</code> before <code>z</code> went out of scope.</p>
+<ul>
+<li>
+<p><strong>Conclusion</strong></p>
+<p>Ownership is a powerful tool for managing memory in Rust. It ensures that values are only stored in memory for as long as they are needed, and it prevents memory leaks.</p>
+</li>
+</ul>
+<p>Ownership is a unique feature in Rust that governs how memory is managed and ensures memory safety without the need for a garbage collector. It allows Rust to achieve both performance and memory safety guarantees. Here are some clear examples that demonstrate the concept of ownership in Rust:</p>
+<p>Example 1: Ownership Transfer</p>
+<pre><pre class="playground"><code class="language-rust">fn take_ownership(s: String) {
+    println!(&quot;Received ownership of: {}&quot;, s);
+}  // s goes out of scope and its memory is freed
+
+fn main() {
+    let my_string = String::from(&quot;Hello&quot;);
+    take_ownership(my_string);
+    // The ownership of my_string is transferred to take_ownership
+    // my_string is no longer accessible in the main function
+}</code></pre></pre>
+<p>In this example, the <code>take_ownership</code> function takes ownership of a <code>String</code> parameter. Ownership is transferred from the caller to the function. Once the function completes, the owned <code>String</code> goes out of scope, and its memory is freed.</p>
+<p>Example 2: Borrowing with References</p>
+<pre><pre class="playground"><code class="language-rust">fn print_length(s: &amp;str) {
+    println!(&quot;Length of the string: {}&quot;, s.len());
+}
+
+fn main() {
+    let my_string = String::from(&quot;Hello&quot;);
+    print_length(&amp;my_string);
+    // The function borrows a reference to my_string
+    // The reference allows accessing the value without taking ownership
+    // The caller retains ownership of my_string
+}</code></pre></pre>
+<p>In this example, the <code>print_length</code> function borrows a reference to a string slice (<code>&amp;str</code>) instead of taking ownership. By using a reference, the function can access the value without taking ownership. The caller retains ownership of the string, and the function can work with the borrowed reference.</p>
+<p>Example 3: Ownership and Move Semantics</p>
+<pre><pre class="playground"><code class="language-rust">fn return_ownership() -&gt; String {
+    let s = String::from(&quot;Hello&quot;);
+    s  // Ownership of s is transferred to the caller
+}
+
+fn main() {
+    let my_string = return_ownership();
+    // The return value of the function is assigned to my_string
+    // Ownership of the String is transferred from the function to my_string
+    // The function no longer has ownership of the String
+}</code></pre></pre>
+<p>In this example, the <code>return_ownership</code> function creates and owns a <code>String</code>. The function then returns the <code>String</code>, transferring ownership to the caller. The caller receives the returned <code>String</code> and becomes the new owner of the value.</p>
+<p>These examples demonstrate how ownership works in Rust. The ownership model ensures that each value has a single owner at any given time, preventing issues like use-after-free, double free, or data races. It allows for efficient memory management without the need for garbage collection or manual memory deallocation.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="error-handling"><a class="header" href="#error-handling">Error handling</a></h1>
+<p>Error handling in Rust is based on the <code>Result</code> and <code>Option</code> types. The <code>Result</code> type is used when an operation can return an error, while the <code>Option</code> type represents the possibility of a value being absent. Here are some robust examples that showcase error handling in Rust:</p>
+<p>Example 1: Returning a <code>Result</code> from a function</p>
+<pre><pre class="playground"><code class="language-rust">use std::fs::File;
+use std::io::Read;
+
+
+fn read_file_contents(filename: &amp;str) -&gt; Result&lt;String, std::io::Error&gt; {
+    let mut file = File::open(filename)?;
+    let mut contents = String::new();
+    file.read_to_string(&amp;mut contents)?;
+    Ok(contents)
+}
+
+fn main() {
+    let result = read_file_contents(&quot;example.txt&quot;);
+    match result {
+        Ok(contents) =&gt; println!(&quot;File contents: {}&quot;, contents),
+        Err(error) =&gt; println!(&quot;Error: {}&quot;, error),
+    }
+}</code></pre></pre>
+<p>In this example, the <code>read_file_contents</code> function attempts to open a file, read its contents, and return them as a <code>String</code>. If any operation encounters an error, a <code>Result</code> with the appropriate error type (<code>std::io::Error</code> in this case) is returned. In the <code>main</code> function, we handle the result using a <code>match</code> expression, printing the file contents if successful (<code>Ok</code>) or the encountered error (<code>Err</code>).</p>
+<p>Example 2: Propagating errors with the <code>?</code> operator</p>
+<pre><pre class="playground"><code class="language-rust">use std::fs;
+
+fn read_file_contents(filename: &amp;str) -&gt; Result&lt;String, std::io::Error&gt; {
+    let contents = fs::read_to_string(filename)?;
+    Ok(contents)
+}
+
+fn process_file(filename: &amp;str) -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
+    let contents = read_file_contents(filename)?;
+    // Process the file contents
+    Ok(())
+}
+
+fn main() {
+    let result = process_file(&quot;example.txt&quot;);
+    match result {
+        Ok(()) =&gt; println!(&quot;File processed successfully&quot;),
+        Err(error) =&gt; println!(&quot;Error: {}&quot;, error),
+    }
+}</code></pre></pre>
+<p>In this example, the <code>read_file_contents</code> function is similar to the previous example, but it uses the <code>?</code> operator to propagate errors automatically. If an error occurs during the <code>read_to_string</code> operation, the error is immediately returned from the function. The <code>process_file</code> function calls <code>read_file_contents</code> and propagates any errors it encounters. The <code>main</code> function handles the result, printing a success message or the encountered error.</p>
+<p>Example 3: Unwrapping <code>Option</code> values</p>
+<pre><pre class="playground"><code class="language-rust">fn get_first_element(slice: &amp;[i32]) -&gt; Option&lt;i32&gt; {
+    if slice.is_empty() {
+        None
+    } else {
+        Some(slice[0])
+    }
+}
+
+fn main() {
+    let numbers = vec![1, 2, 3];
+    let first_number = get_first_element(&amp;numbers);
+    match first_number {
+        Some(number) =&gt; println!(&quot;First number: {}&quot;, number),
+        None =&gt; println!(&quot;No numbers found&quot;),
+    }
+}</code></pre></pre>
+<p>In this example, the <code>get_first_element</code> function takes a slice of <code>i32</code> values and returns an <code>Option&lt;i32&gt;</code>. If the slice is empty, it returns <code>None</code>, indicating that no element was found. Otherwise, it returns <code>Some(element)</code> with the first element of the slice. In the <code>main</code> function, we handle the <code>Option</code> result using a <code>match</code> expression, printing the first number if present (<code>Some</code>) or a message indicating no numbers were found (<code>None</code>).</p>
+<p>These examples showcase various aspects of error handling in Rust, including returning and propagating <code>Result</code> values, handling errors with the `</p>
+<p>Here is an explanation of error handling in Rust with robust examples:</p>
+<ul>
+<li><strong>What is error handling?</strong></li>
+</ul>
+<p>Error handling is the process of dealing with errors that occur during the execution of a program. Rust has a number of features for handling errors, including the <code>Result</code> enum, the <code>panic!</code> macro, and the <code>Error</code> trait.</p>
+<ul>
+<li><strong>The <code>Result</code> enum</strong></li>
+</ul>
+<p>The <code>Result</code> enum is a special enum that is used to represent the result of a computation that can either be successful or unsuccessful. The <code>Result</code> enum has two variants: <code>Ok</code> and <code>Err</code>. The <code>Ok</code> variant contains the successful result, and the <code>Err</code> variant contains the error.</p>
+<ul>
+<li><strong>The <code>panic!</code> macro</strong></li>
+</ul>
+<p>The <code>panic!</code> macro is used to handle unrecoverable errors. When the <code>panic!</code> macro is called, the program will terminate immediately.</p>
+<ul>
+<li><strong>The <code>Error</code> trait</strong></li>
+</ul>
+<p>The <code>Error</code> trait is a trait that can be implemented by any type that represents an error. The <code>Error</code> trait provides a number of methods for working with errors, such as the <code>source()</code> method, which returns the source of the error, and the <code>description()</code> method, which returns a description of the error.</p>
+<ul>
+<li><strong>Examples of error handling</strong></li>
+</ul>
+<p>Here are some examples of error handling in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">  fn divide(numerator: i32, denominator: i32) -&gt; Result&lt;i32, String&gt; {
+      if denominator == 0 {
+          return Err(&quot;Division by zero&quot;);
+      } else {
+          return Ok(numerator / denominator);
+      }
+  }
+  
+  fn main() {
+      let result = divide(10, 2);
+  
+      if let Ok(x) = result {
+          println!(&quot;The result is {}&quot;, x);
+      } else {
+          println!(&quot;Error: {}&quot;, result.err().unwrap());
+      }
+  }</code></pre></pre>
+<p>In this example, the <code>divide()</code> function takes two integers as arguments and returns a <code>Result</code>. The <code>divide()</code> function returns <code>Err</code> if the denominator is 0, and it returns <code>Ok(x)</code> if the denominator is not 0, where <code>x</code> is the result of the division.</p>
+<p>The <code>main()</code> function calls the <code>divide()</code> function and then checks the result. If the result is <code>Ok</code>, the <code>main()</code> function prints the result to the console. If the result is <code>Err</code>, the <code>main()</code> function prints the error message to the console.</p>
+<ul>
+<li><strong>Conclusion</strong></li>
+</ul>
+<p>Error handling is an important part of any programming language. Rust has a number of features for handling errors, which make it a robust and reliable language.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="user-input"><a class="header" href="#user-input">User input</a></h1>
+<p>Here is an example of how to take user input in a Rust program:</p>
+<pre><pre class="playground"><code class="language-rust">  use std::io;
+  
+  fn main() {
+      let mut input = String::new();
+  
+      io::stdin().read_line(&amp;mut input).expect(&quot;Failed to read line&quot;);
+  
+      println!(&quot;The user input is: {}&quot;, input);
+  }</code></pre></pre>
+<p>In this example, the <code>read_line()</code> function from the <code>std::io</code> module is used to read a line of user input. The <code>read_line()</code> function takes a mutable string as an argument, and it returns an <code>io::Result</code>. The <code>io::Result</code> enum represents the result of an I/O operation, and it can either be <code>Ok</code> or <code>Err</code>.</p>
+<p>If the <code>read_line()</code> function succeeds, it returns <code>Ok(input)</code>, where <code>input</code> is the string that was entered by the user. If the <code>read_line()</code> function fails, it returns <code>Err(error)</code>, where <code>error</code> is an error message.</p>
+<p>The <code>expect()</code> macro is used to handle the <code>io::Result</code> from the <code>read_line()</code> function. The <code>expect()</code> macro takes a <code>Result</code> as an argument, and it panics if the <code>Result</code> is <code>Err</code>. In this example, the <code>expect()</code> macro will panic if the <code>read_line()</code> function fails.</p>
+<p>The <code>main()</code> function prints the user input to the console.</p>
+<p>Here is an example of how to run the program:</p>
+<p>Code snippet</p>
+<pre><code class="language-shell">cargo run
+</code></pre>
+<p>When you run the program, you will be prompted to enter some text. After you enter the text, the program will print the text that you entered to the console.</p>
+<p>To capture user input in a Rust program, you can use the <code>std::io</code> module to read input from the standard input stream (<code>stdin</code>). Here's an example that demonstrates how to get user input in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+
+fn main() {
+    println!(&quot;Please enter your name:&quot;);
+
+    let mut name = String::new();
+    io::stdin()
+        .read_line(&amp;mut name)
+        .expect(&quot;Failed to read line&quot;);
+
+    println!(&quot;Hello, {}!&quot;, name.trim());
+}</code></pre></pre>
+<p>In this example, the program prompts the user to enter their name. It creates a mutable <code>String</code> variable called <code>name</code> to store the input. The <code>read_line</code> function from <code>std::io::stdin()</code> reads the input from the user and appends it to the <code>name</code> variable. The <code>expect</code> method is used to handle any errors that may occur during input reading.</p>
+<p>Finally, the program trims the input using the <code>trim</code> method to remove any leading or trailing whitespace. It then prints a greeting message along with the user's name.</p>
+<p>You can run this program and interact with it by providing your name as input.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="command-line-arguments"><a class="header" href="#command-line-arguments">Command line arguments</a></h1>
+<p>In Rust, you can access command line arguments using the <code>std::env</code> module. Here are a few examples that demonstrate how to work with command line arguments in Rust:</p>
+<p>Example 1: Printing all command line arguments</p>
+<pre><pre class="playground"><code class="language-rust">use std::env;
+
+fn main() {
+    let args: Vec&lt;String&gt; = env::args().collect();
+
+    for arg in &amp;args {
+        println!(&quot;{}&quot;, arg);
+    }
+}</code></pre></pre>
+<p>In this example, the <code>env::args()</code> function returns an iterator of command line arguments. We collect these arguments into a <code>Vec&lt;String&gt;</code> using the <code>collect()</code> method. Then, we iterate over the vector and print each argument.</p>
+<p>Example 2: Getting a specific command line argument</p>
+<pre><pre class="playground"><code class="language-rust">use std::env;
+
+fn main() {
+    let args: Vec&lt;String&gt; = env::args().collect();
+
+    if let Some(arg) = args.get(1) {
+        println!(&quot;The second argument is: {}&quot;, arg);
+    } else {
+        println!(&quot;No second argument provided.&quot;);
+    }
+}</code></pre></pre>
+<p>In this example, we access a specific command line argument by indexing the <code>args</code> vector. The first argument (<code>args[0]</code>) is the path to the executable itself. Here, we check if the second argument (<code>args[1]</code>) is present using the <code>get()</code> method. If it exists, we print its value. Otherwise, we indicate that no second argument was provided.</p>
+<p>Example 3: Parsing command line arguments as integers</p>
+<pre><pre class="playground"><code class="language-rust">use std::env;
+
+fn main() {
+    let args: Vec&lt;String&gt; = env::args().collect();
+
+    if let Some(arg) = args.get(1) {
+        let num: i32 = arg.parse().expect(&quot;Invalid number&quot;);
+        println!(&quot;The parsed number is: {}&quot;, num);
+    } else {
+        println!(&quot;No argument provided.&quot;);
+    }
+}</code></pre></pre>
+<p>In this example, we parse the second command line argument as an integer using the <code>parse()</code> method. We specify the type we want to parse (<code>i32</code> in this case) and handle any parsing errors using the <code>expect()</code> method. If the argument is successfully parsed, we print its value. Otherwise, we indicate that the provided value is not a valid number.</p>
+<p>These examples demonstrate how to work with command line arguments in Rust. You can customize them based on your specific needs and manipulate the arguments as required for your program.</p>
+<p>Here are a few examples of how to use command line arguments in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">  fn main() {
+      let args: Vec&lt;String&gt; = std::env::args().collect();
+  
+      if args.len() != 2 {
+          println!(&quot;Usage: my_program &lt;file&gt;&quot;);
+          return;
+      }
+  
+      let filename = args[1].clone();
+  
+      // Do something with the file.
+  }</code></pre></pre>
+<p>In this example, the <code>main()</code> function takes a vector of strings as an argument. The vector of strings contains the command line arguments that were passed to the program.</p>
+<p>The <code>args.len()</code> function returns the number of elements in the vector of strings. If the number of elements is not equal to 2, the <code>main()</code> function prints a usage message and returns.</p>
+<p>The <code>args[1]</code> function returns the second element in the vector of strings. In this case, the second element is the filename that was passed to the program.</p>
+<p>The <code>clone()</code> method creates a copy of the <code>filename</code> string. The <code>clone()</code> method is necessary because the <code>main()</code> function is about to return, and the <code>filename</code> variable will be dropped.</p>
+<p>The <code>main()</code> function then does something with the file.</p>
+<p>Here is an example of how to run the program:</p>
+<pre><code class="language-shell">cargo run my_file.txt
+</code></pre>
+<p>When you run the program, the program will read the file <code>my_file.txt</code> and do something with it.</p>
+<p>Here is another example of how to use command line arguments in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let args: Vec&lt;String&gt; = std::env::args().collect();
+
+    let flag = args.contains(&amp;&quot;--flag&quot;.to_string());
+
+    if flag {
+        println!(&quot;The flag was passed.&quot;);
+    } else {
+        println!(&quot;The flag was not passed.&quot;);
+    }
+}</code></pre></pre>
+<p>In this example, the <code>main()</code> function checks if the <code>-flag</code> flag was passed to the program. The <code>args.contains()</code> method returns a boolean value that indicates whether or not the <code>-flag</code> flag was passed to the program.</p>
+<p>If the <code>-flag</code> flag was passed to the program, the <code>main()</code> function prints a message to the console. If the <code>-flag</code> flag was not passed to the program, the <code>main()</code> function prints a different message to the console.</p>
+<p>Here is an example of how to run the program:</p>
+<pre><code class="language-shell">cargo run --flag
+</code></pre>
+<p>When you run the program with the <code>--flag</code> flag, the program will print the message &quot;The flag was passed.&quot;</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="functions"><a class="header" href="#functions">Functions</a></h1>
+<p>Here are some uses of functions in Rust and examples:</p>
+<ul>
+<li><strong>Functions can be used to group related code together.</strong> This makes the code easier to read and understand, and it also makes the code easier to reuse.</li>
+<li><strong>Functions can be used to pass data between different parts of a program.</strong> This makes the code more modular, and it also makes the code easier to test.</li>
+<li><strong>Functions can be used to abstract away complex code.</strong> This makes the code easier to understand and maintain, and it also makes the code more reusable.</li>
+</ul>
+<p>Here are some examples of functions in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">  fn factorial(n: u32) -&gt; u32 {
+      if n == 0 {
+          return 1;
+      } else {
+          return n * factorial(n - 1);
+      }
+  }
+  
+  fn main() {
+      let result = factorial(5);
+      println!(&quot;The factorial of 5 is {}&quot;, result);
+  }</code></pre></pre>
+<p>In this example, the <code>factorial()</code> function takes a number as an argument and returns the factorial of that number. The factorial of a number is the product of all the numbers from 1 to that number.</p>
+<p>The <code>main()</code> function calls the <code>factorial()</code> function with the number 5 as an argument. The <code>factorial()</code> function returns the factorial of 5, which is 120. The <code>main()</code> function prints the factorial of 5 to the console.</p>
+<p>Another example of a function in Rust is the <code>println!()</code> macro. The <code>println!()</code> macro takes a format string and a list of arguments as input. The <code>println!()</code> macro prints the format string to the console, along with the arguments.</p>
+<p>For example, the following code prints the message &quot;Hello, world!&quot; to the console:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>println!(&quot;Hello, world!&quot;);
+<span class="boring">}</span></code></pre></pre>
+<p>Functions in Rust allow you to define reusable blocks of code that can be called from various parts of your program. Functions provide a way to organize and modularize your code. Here are a few examples that showcase the use of functions in Rust:</p>
+<p>Example 1: Simple function without arguments or return value</p>
+<pre><pre class="playground"><code class="language-rust">fn greet() {
+    println!(&quot;Hello, world!&quot;);
+}
+
+fn main() {
+    greet();
+}</code></pre></pre>
+<p>In this example, the <code>greet</code> function prints a greeting message to the console. It doesn't take any arguments and doesn't return a value. In the <code>main</code> function, we call the <code>greet</code> function to execute its code.</p>
+<p>Example 2: Function with arguments and return value</p>
+<pre><pre class="playground"><code class="language-rust">fn add_numbers(a: i32, b: i32) -&gt; i32 {
+    a + b
+}
+
+fn main() {
+    let result = add_numbers(2, 3);
+    println!(&quot;Result: {}&quot;, result);
+}</code></pre></pre>
+<p>In this example, the <code>add_numbers</code> function takes two <code>i32</code> arguments and returns their sum as an <code>i32</code>. In the <code>main</code> function, we call <code>add_numbers</code> with arguments <code>2</code> and <code>3</code>, and store the result in the <code>result</code> variable. Then, we print the result to the console.</p>
+<p>Example 3: Function with mutable arguments</p>
+<pre><pre class="playground"><code class="language-rust">fn increment_value(mut value: i32) {
+    value += 1;
+    println!(&quot;Value inside function: {}&quot;, value);
+}
+
+fn main() {
+    let mut number = 5;
+    increment_value(number);
+    println!(&quot;Value after function call: {}&quot;, number);
+}</code></pre></pre>
+<p>In this example, the <code>increment_value</code> function takes a mutable <code>i32</code> argument. Inside the function, the value is incremented by <code>1</code>. Even though the argument is mutable, it doesn't affect the original value passed from the <code>main</code> function. The function prints the modified value inside the function, and then in the <code>main</code> function, we print the original value to demonstrate that it remains unchanged.</p>
+<p>These examples illustrate the use of functions in Rust for code organization, reusability, and encapsulation of logic. Functions allow you to write modular and readable code by breaking down complex tasks into smaller, manageable units.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="loops"><a class="header" href="#loops">Loops</a></h1>
+<p>In Rust, you can use loops to repeat a block of code until a certain condition is met. Rust provides several loop constructs, including <code>loop</code>, <code>while</code>, and <code>for</code> loops. Here are some examples that demonstrate the use of loops in Rust:</p>
+<p>Example 1: <code>loop</code> loop</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut count = 0;
+
+    loop {
+        println!(&quot;Count: {}&quot;, count);
+        count += 1;
+
+        if count &gt;= 5 {
+            break;
+        }
+    }
+}</code></pre></pre>
+<p>In this example, the <code>loop</code> loop repeats indefinitely until the <code>break</code> statement is encountered. We start with <code>count</code> initialized to <code>0</code> and print its value in each iteration. After each iteration, we increment <code>count</code> by <code>1</code>. Once <code>count</code> reaches <code>5</code> or more, we break out of the loop using the <code>break</code> statement.</p>
+<p>Example 2: <code>while</code> loop</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut count = 0;
+
+    while count &lt; 5 {
+        println!(&quot;Count: {}&quot;, count);
+        count += 1;
+    }
+}</code></pre></pre>
+<p>In this example, the <code>while</code> loop repeats the block of code as long as the condition <code>count &lt; 5</code> is true. We initialize <code>count</code> to <code>0</code> and print its value in each iteration. After each iteration, we increment <code>count</code> by <code>1</code>. The loop continues until <code>count</code> becomes <code>5</code> or greater, at which point the loop terminates.</p>
+<p>Example 3: <code>for</code> loop</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let numbers = [1, 2, 3, 4, 5];
+
+    for number in numbers.iter() {
+        println!(&quot;Number: {}&quot;, number);
+    }
+}</code></pre></pre>
+<p>In this example, the <code>for</code> loop iterates over each element of the <code>numbers</code> array using the <code>iter()</code> method. In each iteration, the current element is assigned to the variable <code>number</code>, and we print its value. The loop automatically terminates after all elements have been processed.</p>
+<p>These examples demonstrate the usage of different types of loops in Rust: <code>loop</code>, <code>while</code>, and <code>for</code> loops. You can choose the loop construct that suits your needs based on the specific requirements of your program.</p>
+<p>Here are some examples of loops in Rust:</p>
+<ul>
+<li><strong>The <code>loop</code> keyword</strong></li>
+</ul>
+<p>The <code>loop</code> keyword is used to create an infinite loop. An infinite loop is a loop that never ends. The <code>loop</code> keyword can be used to create a simple counter, for example:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut counter = 0;
+    loop {
+        println!(&quot;The counter is {}&quot;, counter);
+        counter += 1;
+    }
+}</code></pre></pre>
+<p>This code will print the counter to the console, and then increment the counter by 1. The loop will continue to run until the program is terminated.</p>
+<blockquote>
+<p>in while in terminal session press <code>ctrl</code> and <code>c</code></p>
+</blockquote>
+<ul>
+<li><strong>The <code>while</code> keyword</strong></li>
+</ul>
+<p>The <code>while</code> keyword is used to create a loop that runs while a condition is true. The <code>while</code> loop can be used to print the numbers from 1 to 10, for example:</p>
+<pre><pre class="playground"><code class="language-rust">  fn main() {
+      let mut number = 1;
+      while number &lt;= 10 {
+          println!(&quot;{}&quot;, number);
+          number += 1;
+      }
+  }</code></pre></pre>
+<p>This code will print the numbers from 1 to 10 to the console. The loop will continue to run while the number is less than or equal to 10.</p>
+<ul>
+<li><strong>The <code>for</code> keyword</strong></li>
+</ul>
+<p>The <code>for</code> keyword is used to create a loop that iterates over a collection. The <code>for</code> loop can be used to print the elements of a vector, for example:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let numbers = vec![1, 2, 3, 4, 5];
+    for number in numbers {
+        println!(&quot;{}&quot;, number);
+    }
+}</code></pre></pre>
+<p>This code will print the elements of the vector <code>numbers</code> to the console. The loop will iterate over the vector, and print each element to the console.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="if-else-if-else"><a class="header" href="#if-else-if-else">if, else if, else</a></h1>
+<p>Here are some examples of how to use <code>if</code>, <code>else if</code>, and <code>else</code> in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let number = 5;
+
+    if number &gt; 10 {
+        println!(&quot;The number is greater than 10&quot;);
+    } else if number &gt; 5 {
+        println!(&quot;The number is greater than 5&quot;);
+    } else {
+        println!(&quot;The number is less than or equal to 5&quot;);
+    }
+}</code></pre></pre>
+<p>In this example, the <code>if</code> statement checks if the number is greater than 10. If the number is greater than 10, the <code>if</code> statement will print the message &quot;The number is greater than 10&quot; to the console. Otherwise, the <code>if</code> statement will not print anything.</p>
+<p>The <code>else if</code> statement checks if the number is greater than 5. If the number is greater than 5, but not greater than 10, the <code>else if</code> statement will print the message &quot;The number is greater than 5&quot; to the console. Otherwise, the <code>else if</code> statement will not print anything.</p>
+<p>The <code>else</code> statement is a catch-all statement that will be executed if none of the other conditions are met. In this case, the <code>else</code> statement will print the message &quot;The number is less than or equal to 5&quot; to the console.</p>
+<p>Here is another example of how to use <code>if</code>, <code>else if</code>, and <code>else</code>:</p>
+<pre><pre class="playground"><code class="language-rust">  fn main() {
+      let number = 3;
+  
+      let result = match number {
+          1 =&gt; &quot;One&quot;,
+          2 =&gt; &quot;Two&quot;,
+          3 =&gt; &quot;Three&quot;,
+          _ =&gt; &quot;Unknown&quot;,
+      };
+  
+      println!(&quot;The number is {}&quot;, result);
+  }</code></pre></pre>
+<p>In this example, the <code>match</code> statement is used to check the value of the variable <code>number</code> and return a different string depending on the value. The <code>match</code> statement is a powerful tool for controlling the flow of a program.</p>
+<p>In Rust, you can use <code>if</code>, <code>else if</code>, and <code>else</code> statements for controlling the flow of your program based on different conditions. Here are some examples that showcase the usage of conditional statements in Rust:</p>
+<p>Example 1: Simple if-else statement</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let number = 10;
+
+    if number &gt; 0 {
+        println!(&quot;Number is positive&quot;);
+    } else {
+        println!(&quot;Number is non-positive&quot;);
+    }
+}</code></pre></pre>
+<p>In this example, the program checks if the <code>number</code> variable is greater than <code>0</code>. If the condition is true, it prints &quot;Number is positive&quot;. Otherwise, it executes the code within the <code>else</code> block and prints &quot;Number is non-positive&quot;.</p>
+<p>Example 2: if-else if-else statement</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let number = 0;
+
+    if number &gt; 0 {
+        println!(&quot;Number is positive&quot;);
+    } else if number &lt; 0 {
+        println!(&quot;Number is negative&quot;);
+    } else {
+        println!(&quot;Number is zero&quot;);
+    }
+}</code></pre></pre>
+<p>In this example, the program checks the value of the <code>number</code> variable using multiple conditions. If the <code>number</code> is greater than <code>0</code>, it prints &quot;Number is positive&quot;. If the <code>number</code> is less than <code>0</code>, it prints &quot;Number is negative&quot;. If none of the previous conditions are true, it executes the code within the <code>else</code> block and prints &quot;Number is zero&quot;.</p>
+<p>Example 3: Ternary operator-like expression</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let number = 10;
+    let result = if number &gt; 0 { &quot;positive&quot; } else { &quot;non-positive&quot; };
+    println!(&quot;Number is {}&quot;, result);
+}</code></pre></pre>
+<p>In this example, the program assigns a value to the <code>result</code> variable using a ternary operator-like expression. If the <code>number</code> is greater than <code>0</code>, it assigns the string &quot;positive&quot; to <code>result</code>. Otherwise, it assigns the string &quot;non-positive&quot;. Finally, it prints the value of <code>result</code>.</p>
+<p>These examples demonstrate the usage of conditional statements in Rust (<code>if</code>, <code>else if</code>, and <code>else</code>). You can use these control flow constructs to execute different blocks of code based on specific conditions in your program.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="on-variables-and-mutability"><a class="header" href="#on-variables-and-mutability">On variables and mutability</a></h1>
+<p>In Rust, variables are used to store and manipulate data. They have a specific type and can be either mutable or immutable. Here's an explanation of variables and mutability in Rust:</p>
+<p>Variables:</p>
+<ul>
+<li>In Rust, you declare variables using the <code>let</code> keyword followed by the variable name.</li>
+<li>Variables are strongly typed, meaning that you need to specify their type at the time of declaration, or the type can be inferred by the compiler based on the assigned value.</li>
+<li>Once a variable is declared, its value can be changed or updated during the execution of the program.</li>
+</ul>
+<p>Mutability:</p>
+<ul>
+<li>By default, variables in Rust are immutable, which means their values cannot be modified once assigned.</li>
+<li>Immutable variables provide safety by preventing accidental modifications and enabling better concurrency and thread safety.</li>
+<li>You can declare an immutable variable using the <code>let</code> keyword without the <code>mut</code> modifier: <code>let x = 5;</code></li>
+<li>Immutable variables are read-only and cannot be reassigned: <code>x = 10; // This will produce a compilation error</code></li>
+</ul>
+<p>Mutability allows you to change the value of a variable. To declare a mutable variable, you need to use the <code>mut</code> keyword:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut x = 5; // Declare a mutable variable 'x' with an initial value of 5
+    println!(&quot;x: {}&quot;, x); // Output: x: 5
+
+    x = 10; // Update the value of 'x'
+    println!(&quot;x: {}&quot;, x); // Output: x: 10
+}</code></pre></pre>
+<p>In the example above, the variable <code>x</code> is declared as mutable using the <code>mut</code> keyword. This allows us to modify its value later in the program.</p>
+<p>It's important to note that mutability is a property of the variable itself, not the value it holds. This means that even if a variable is mutable, the assigned value must still be of the same type.</p>
+<p>By default, it is recommended to use immutable variables unless you specifically need to change their values. This promotes safer and more predictable code. However, when mutability is required, you can use the <code>mut</code> keyword to declare mutable variables and modify their values as needed.</p>
+<p>Remember to strike a balance between using mutability when necessary and favoring immutability to ensure code correctness and readability.</p>
+<p>In Rust, variables are immutable by default. This means that once you create a variable and assign a value to it, you cannot change that value. You can make a variable mutable by adding the <code>mut</code> keyword before the variable name.</p>
+<p>For example, the following code creates an immutable variable called <code>x</code> and assigns the value 10 to it:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x = 10;
+<span class="boring">}</span></code></pre></pre>
+<p>The following code creates a mutable variable called <code>y</code> and assigns the value 10 to it:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut y = 10;
+<span class="boring">}</span></code></pre></pre>
+<p>You can change the value of the mutable variable <code>y</code> by using the <code>mut</code> keyword:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>y = 20;
+<span class="boring">}</span></code></pre></pre>
+<p>Rust's approach to mutability is designed to make programs more safe and reliable. By default, variables are immutable, which means that you cannot accidentally change a variable's value. This can help to prevent bugs and errors.</p>
+<p>However, there are times when you need to be able to change a variable's value. In these cases, you can use the <code>mut</code> keyword to make the variable mutable.</p>
+<p>Here are some of the benefits of using mutability in Rust:</p>
+<ul>
+<li>It can make your code more concise and easier to read.</li>
+<li>It can allow you to write more efficient code.</li>
+<li>It can give you more flexibility in how you write your code.</li>
+</ul>
+<p>However, there are also some potential drawbacks to using mutability in Rust:</p>
+<ul>
+<li>It can make your code more complex and difficult to understand.</li>
+<li>It can increase the risk of bugs and errors.</li>
+<li>It can make your code less efficient.</li>
+</ul>
+<p>Ultimately, the decision of whether or not to use mutability in Rust is a trade-off between safety, conciseness, and efficiency.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="generic-types"><a class="header" href="#generic-types">Generic types</a></h1>
+<p>Generic types in Rust are a way to write code that can work with different types of data. This can make your code more reusable and easier to understand.</p>
+<p>For example, let's say you want to write a function that can print the length of a list of any type. You could write the function like this:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>  fn print_length&lt;T&gt;(list: &amp;[T]) -&gt; usize {
+      list.len()
+  }
+<span class="boring">}</span></code></pre></pre>
+<p>The <code>&lt;T&gt;</code> in the function signature is a generic type parameter. This means that the function can work with any type that is compatible with the <code>T</code> type. In this case, the <code>T</code> type must be a type that can be stored in a list.</p>
+<p>To use the function, you would pass it a list of any type. For example, you could pass it a list of integers, a list of strings, or a list of any other type that can be stored in a list.</p>
+<p>The following code shows how to use the <code>print_length()</code> function:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>  let list_of_integers = vec![1, 2, 3, 4, 5];
+  let list_of_strings = vec![&quot;Hello&quot;, &quot;World&quot;, &quot;Rust&quot;];
+  
+  print_length(&amp;list_of_integers);
+  print_length(&amp;list_of_strings);
+<span class="boring">}</span></code></pre></pre>
+<p>The <code>print_length()</code> function will print the length of both the list of integers and the list of strings.</p>
+<p>Generic types can be a powerful tool for writing reusable and efficient code. They can also make your code more concise and easier to understand.</p>
+<p>Here are some other examples of generic types in Rust:</p>
+<ul>
+<li>The <code>Vec&lt;T&gt;</code> type is a generic vector type. This means that a <code>Vec&lt;T&gt;</code> can store any type that is compatible with the <code>T</code> type.</li>
+<li>The <code>Option&lt;T&gt;</code> type is a generic option type. This means that an <code>Option&lt;T&gt;</code> can store either a value of type <code>T</code> or the <code>None</code> value.</li>
+<li>The <code>Result&lt;T, E&gt;</code> type is a generic result type. This means that a <code>Result&lt;T, E&gt;</code> can store either a value of type <code>T</code> or an error of type <code>E</code>.</li>
+</ul>
+<p>In Rust, generic types allow you to define functions, structs, and enums that can work with different data types. This promotes code reusability and flexibility. Here's a clear example of generic types in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">// A generic struct that can hold a value of any type
+struct Container&lt;T&gt; {
+    value: T,
+}
+
+// A generic function that takes two values of the same type and returns their sum
+fn add&lt;T&gt;(a: T, b: T) -&gt; T
+where
+    T: std::ops::Add&lt;Output = T&gt;,
+{
+    a + b
+}
+
+fn main() {
+    // Create a Container with an i32 value
+    let container_i32 = Container { value: 42 };
+    println!(&quot;Container (i32): {}&quot;, container_i32.value);
+
+    // Create a Container with a char value
+    let container_char = Container { value: 'a' };
+    println!(&quot;Container (char): {}&quot;, container_char.value);
+
+    // Call the add function with two i32 values
+    let sum_i32 = add(10, 20);
+    println!(&quot;Sum (i32): {}&quot;, sum_i32);
+
+    // Call the add function with two f64 values
+    let sum_f64 = add(3.14, 2.71);
+    println!(&quot;Sum (f64): {}&quot;, sum_f64);
+}</code></pre></pre>
+<p>In this example, we define a generic struct called <code>Container</code> that can hold a value of any type. The generic type parameter <code>T</code> is used to represent the type of the value.</p>
+<p>We also define a generic function called <code>add</code> that takes two values of the same type and returns their sum. The type parameter <code>T</code> is constrained to implement the <code>Add</code> trait using the <code>where</code> clause. This ensures that the <code>+</code> operator is supported for the type <code>T</code>.</p>
+<p>In the <code>main</code> function, we demonstrate the usage of the generic struct and function. We create a <code>Container</code> with an <code>i32</code> value and a <code>char</code> value, and print their respective values. Then, we call the <code>add</code> function with <code>i32</code> values and <code>f64</code> values, and print the resulting sums.</p>
+<p>By using generic types, we can write code that is agnostic to the specific data types it operates on, increasing code reuse and flexibility. The Rust compiler will generate specialized versions of the generic code for each concrete type used, ensuring type safety and performance.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="traits"><a class="header" href="#traits">Traits</a></h1>
+<p>In Rust, traits define a set of behaviors or capabilities that types can implement. They allow you to define shared interfaces and enforce a common set of functionality across different types. Here's an explanation of traits and their usage in Rust:</p>
+<p>Defining a Trait:
+To define a trait, you use the <code>trait</code> keyword followed by the trait name. Inside the trait, you can define methods that specify the behavior expected from types that implement the trait. Here's an example of a trait named <code>Drawable</code> with a single method <code>draw()</code>:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>trait Drawable {
+    fn draw(&amp;self);
+}
+<span class="boring">}</span></code></pre></pre>
+<p>Implementing a Trait:
+To make a type implement a trait, you use the <code>impl</code> keyword followed by the trait name. Within the <code>impl</code> block, you provide implementations for the trait methods. Here's an example of implementing the <code>Drawable</code> trait for a type <code>Rectangle</code>:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Drawable for Rectangle {
+    fn draw(&amp;self) {
+        println!(&quot;Drawing a rectangle with width {} and height {}&quot;, self.width, self.height);
+    }
+}
+<span class="boring">}</span></code></pre></pre>
+<p>Using a Trait:
+Once a type implements a trait, you can use the trait methods on instances of that type as if they were defined directly on the type. Here's an example of using the <code>draw()</code> method on a <code>Rectangle</code> instance:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let rect = Rectangle { width: 10, height: 5 };
+    rect.draw();
+}</code></pre></pre>
+<p>In this example, the <code>draw()</code> method is called on the <code>rect</code> instance of type <code>Rectangle</code>. Since <code>Rectangle</code> implements the <code>Drawable</code> trait, it can be treated as a <code>Drawable</code> and the <code>draw()</code> method can be invoked on it.</p>
+<p>Traits can also be used as generic bounds to specify that a generic type must implement a particular trait. This allows you to write generic code that operates on types with certain shared behavior. Here's an example:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn draw_shape&lt;T: Drawable&gt;(shape: T) {
+    shape.draw();
+}
+<span class="boring">}</span></code></pre></pre>
+<p>In this example, the <code>draw_shape()</code> function takes a generic argument <code>T</code> that must implement the <code>Drawable</code> trait. It can then call the <code>draw()</code> method on the <code>shape</code> argument.</p>
+<p>Traits are a powerful feature in Rust that enable code reuse and polymorphism. They allow you to define shared behavior across different types and write generic code that operates on types with certain capabilities. By implementing traits for your own types, you can ensure consistent behavior and enable code interoperability.</p>
+<p>In Rust, a trait is a collection of methods that can be implemented by different types. This allows for code reuse and polymorphism, making Rust's type system more powerful and flexible.</p>
+<p>Traits are defined using the <code>trait</code> keyword, followed by the name of the trait and the list of methods that the trait defines. For example, the following code defines a trait called <code>Animal</code> with two methods: <code>name()</code> and <code>noise()</code>.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>trait Animal {
+    fn name(&amp;self) -&gt; &amp;str;
+    fn noise(&amp;self) -&gt; &amp;str;
+}
+<span class="boring">}</span></code></pre></pre>
+<p>Types can implement traits using the <code>impl</code> keyword. For example, the following code implements the <code>Animal</code> trait for the <code>Sheep</code> type.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>  impl Animal for Sheep {
+      fn name(&amp;self) -&gt; &amp;str {
+          &quot;Dolly&quot;
+      }
+  
+      fn noise(&amp;self) -&gt; &amp;str {
+          &quot;Baa!&quot;
+      }
+  }
+<span class="boring">}</span></code></pre></pre>
+<p>Once a type has implemented a trait, it can use the methods defined by the trait. For example, the following code creates a <code>Sheep</code> instance and calls the <code>name()</code> and <code>noise()</code> methods on it.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>  let sheep = Sheep {};
+  
+  println!(&quot;The sheep's name is {}&quot;, sheep.name());
+  println!(&quot;The sheep makes the noise {}&quot;, sheep.noise());
+<span class="boring">}</span></code></pre></pre>
+<p>Traits can be used in a variety of ways in Rust. For example, they can be used to define generic types, to implement polymorphism, and to create interfaces.</p>
+<p>Here are some of the benefits of using traits in Rust:</p>
+<ul>
+<li><strong>Code reuse:</strong> Traits allow for code reuse by defining shared functionality in an abstract way. This can help to reduce the amount of duplicate code in your project.</li>
+<li><strong>Polymorphism:</strong> Traits can be used to implement polymorphism in Rust. This means that you can create code that can work with different types of data, without having to know the specific type of data at compile time.</li>
+<li><strong>Interfaces:</strong> Traits can be used to create interfaces in Rust. This means that you can define a set of methods that a type must implement, without having to specify the implementation of those methods.</li>
+</ul>
+<p>If you are new to Rust, I recommend that you read the Rust book: https://doc.rust-lang.org/book/ chapter on traits for more information.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="testing-code"><a class="header" href="#testing-code">Testing code</a></h1>
+<p>Sure, here is a simple example of testing in Rust:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>  #[cfg(test)]
+  mod tests {
+      #[test]
+      fn it_works() {
+          assert_eq!(2 + 2, 4);
+      }
+  }
+<span class="boring">}</span></code></pre></pre>
+<p>This code defines a test function called <code>it_works()</code>. The <code>it_works()</code> function uses the <code>assert_eq!()</code> macro to check that the expression <code>2 + 2</code> is equal to 4. If the expression is not equal to 4, the test will fail.</p>
+<p>To run the tests, you can use the <code>cargo test</code> command. For example, if you have saved the code above as <code>main.rs</code>, you would run the tests by typing the following command into your terminal:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span> cargo test
+<span class="boring">}</span></code></pre></pre>
+<p>The <code>cargo test</code> command will compile your code and run all of the tests. If any of the tests fail, the <code>cargo test</code> command will print an error message.</p>
+<p>Here is a breakdown of the code:</p>
+<ul>
+<li>The <code>#[cfg(test)]</code> attribute tells Rust that this code should only be compiled when the <code>test</code> feature is enabled. This is useful for preventing tests from being compiled into your production code.</li>
+<li>The <code>mod tests</code> keyword defines a new module called <code>tests</code>. This module will contain all of the tests for your project.</li>
+<li>The <code>#[test]</code> attribute tells Rust that this function is a test function. Test functions are special functions that are run by the <code>cargo test</code> command.</li>
+<li>The <code>assert_eq!()</code> macro checks that the two expressions on either side of the equal sign are equal. If the expressions are not equal, the test will fail.</li>
+</ul>
+<p>In Rust, testing is an important part of the development process, and the Rust language provides built-in testing support through the <code>#[test]</code> attribute and the <code>cargo test</code> command. Here's a simple example to demonstrate testing in Rust:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// Code to be tested: a function that returns the sum of two numbers
+fn add(a: i32, b: i32) -&gt; i32 {
+    a + b
+}
+
+// Unit test for the add() function
+#[test]
+fn test_add() {
+    // Test case 1: Testing positive numbers
+    assert_eq!(add(2, 3), 5);
+
+    // Test case 2: Testing negative numbers
+    assert_eq!(add(-5, -10), -15);
+
+    // Test case 3: Testing zero
+    assert_eq!(add(0, 100), 100);
+}
+
+// Integration test for the add() function
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_add_integration() {
+        // Test case: Testing integration with other functions
+        assert_eq!(add(5, multiply(2, 3)), 11);
+    }
+
+    // Auxiliary function for integration testing
+    fn multiply(a: i32, b: i32) -&gt; i32 {
+        a * b
+    }
+}
+<span class="boring">}</span></code></pre></pre>
+<p>In this example, we have a function <code>add()</code> that calculates the sum of two numbers. To test this function, we use the <code>#[test]</code> attribute to mark the test function <code>test_add()</code>.</p>
+<p>Inside <code>test_add()</code>, we define several test cases using the <code>assert_eq!</code> macro. Each test case compares the result of calling <code>add()</code> with the expected result using the <code>assert_eq!</code> macro.</p>
+<p>We can run the tests using the <code>cargo test</code> command. It will automatically discover and execute all test functions marked with the <code>#[test]</code> attribute.</p>
+<p>Additionally, we also demonstrate an integration test in the <code>tests</code> module. The <code>test_add_integration()</code> test case shows how the <code>add()</code> function can be used in conjunction with another function (<code>multiply()</code> in this case).</p>
+<p>Integration tests are defined in separate files under the <code>tests</code> directory in your Rust project. They are treated as separate crates and can use the <code>#[cfg(test)]</code> attribute to conditionally compile the integration test code.</p>
+<p>Testing is an essential aspect of building reliable and robust applications in Rust. By writing tests, you can verify the correctness of your code, detect bugs early, and ensure that your code behaves as expected.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="iterators"><a class="header" href="#iterators">Iterators</a></h1>
+<p>In Rust, iterators provide a way to traverse and operate on collections of data. They allow you to perform operations like filtering, mapping, and folding over elements without explicitly writing loops. Here's an example that demonstrates the usage of iterators in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let numbers: Vec&lt;i32&gt; = vec![1, 2, 3, 4, 5];
+
+    // Creating an iterator from the vector
+    let iter = numbers.iter();
+
+    // Iterating over the elements and printing them
+    for num in iter {
+        println!(&quot;Number: {}&quot;, num);
+    }
+
+    // Using iterator methods: map and filter
+    let squares: Vec&lt;i32&gt; = numbers.iter()
+        .map(|&amp;x| x * x)
+        .collect();
+    println!(&quot;Squares: {:?}&quot;, squares);
+
+    let even_numbers: Vec&lt;&amp;i32&gt; = numbers.iter()
+        .filter(|&amp;x| x % 2 == 0)
+        .collect();
+    println!(&quot;Even Numbers: {:?}&quot;, even_numbers);
+
+    // Chaining multiple iterator methods
+    let sum: i32 = numbers.iter()
+        .filter(|&amp;x| x % 2 != 0)
+        .map(|&amp;x| x * x)
+        .sum();
+    println!(&quot;Sum of squares of odd numbers: {}&quot;, sum);
+}</code></pre></pre>
+<p>In this example, we start by creating a vector of numbers. We then create an iterator <code>iter</code> from the vector using the <code>iter()</code> method.</p>
+<p>We iterate over the elements of the vector using a <code>for</code> loop and print each number.</p>
+<p>Next, we demonstrate the use of iterator methods. We use the <code>map()</code> method to transform each element into its square and collect the results into a new vector called <code>squares</code>. Similarly, we use the <code>filter()</code> method to keep only the even numbers and collect them into a new vector called <code>even_numbers</code>.</p>
+<p>Lastly, we chain multiple iterator methods together. We filter out the odd numbers, square each of them, and compute their sum using the <code>sum()</code> method.</p>
+<p>The Rust standard library provides a rich set of iterator methods that you can use to perform various operations on collections, such as <code>map()</code>, <code>filter()</code>, <code>fold()</code>, <code>sum()</code>, <code>collect()</code>, and many more. Iterators allow you to write concise and expressive code when working with collections in Rust.</p>
+<p>Here is an example of how to use iterators in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">  fn main() {
+      let numbers = [1, 2, 3, 4, 5];
+  
+      let mut iterator = numbers.iter();
+  
+      while let Some(number) = iterator.next() {
+          println!(&quot;{}&quot;, number);
+      }
+  }</code></pre></pre>
+<p>This code defines a function called <code>main()</code> that iterates over the <code>numbers</code> array using an iterator. The iterator is created by calling the <code>iter()</code> method on the <code>numbers</code> array. The <code>iter()</code> method returns an iterator that can be used to iterate over the elements of the array.</p>
+<p>The <code>while let</code> loop iterates over the iterator, calling the <code>next()</code> method on the iterator to get the next element. The <code>next()</code> method returns an <code>Option&lt;T&gt;</code>, which is a type that can either contain a value of type <code>T</code> or the <code>None</code> value. If the <code>next()</code> method returns <code>None</code>, the loop is finished.</p>
+<p>In this example, the <code>next()</code> method will return a value of type <code>i32</code> for each element in the <code>numbers</code> array. The value of the element is then printed to the console.</p>
+<p>Here is a breakdown of the code:</p>
+<ul>
+<li>The <code>numbers</code> array is a collection of five integers.</li>
+<li>The <code>iterator</code> variable is an iterator that can be used to iterate over the elements of the <code>numbers</code> array.</li>
+<li>The <code>while let</code> loop iterates over the iterator, calling the <code>next()</code> method on the iterator to get the next element.</li>
+<li>The <code>println!()</code> macro prints the value of the element to the console.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="closures"><a class="header" href="#closures">Closures</a></h1>
+<p>Here are some examples of how to use closures in Rust:</p>
+<ul>
+<li>
+<p><strong>As anonymous functions:</strong> Closures can be used as anonymous functions, which means that they can be defined without a name. This can be useful for short, one-off functions that you don't need to use again. For example, the following code defines a closure that takes two numbers as input and returns their sum:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>  let sum_closure = |x: i32, y: i32| x + y;
+  
+  let result = sum_closure(10, 20);
+  
+  println!(&quot;The sum is {}&quot;, result);
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p><strong>As callback functions:</strong> Closures can also be used as callback functions, which means that they can be passed to other functions as a parameter. This can be useful for when you want to run some code after a certain event has happened. For example, the following code defines a function called <code>do_something()</code> that takes a closure as a parameter. The closure will be called after a delay of 1 second.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>  use std::time::Duration;
+  use std::thread;
+
+  fn do_something(closure: &amp;mut dyn FnMut()) {
+      thread::sleep(Duration::from_secs(1));
+      closure();
+  }
+  
+  let mut closure = || println!(&quot;Something was done!&quot;);
+  
+  do_something(&amp;mut closure);
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p><strong>As input parameters:</strong> Closures can also be used as input parameters to other functions. This can be useful for when you want to pass a function that has been defined locally to another function. For example, the following code defines a function called <code>apply_closure()</code> that takes a closure as a parameter and calls the closure.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>  fn apply_closure(closure: &amp;mut dyn FnMut(i32)) {
+      closure(10);
+  }
+  
+  let mut closure = |x| println!(&quot;The number is {}&quot;, 10);
+  
+  apply_closure(&amp;mut closure);
+<span class="boring">}</span></code></pre></pre>
+</li>
+</ul>
+<p>In Rust, closures are anonymous functions that can capture variables from their surrounding environment. They are similar to lambda functions in other programming languages. Closures are useful when you need to create a small, self-contained function that can be passed around or used as an argument to other functions. Here's an example that demonstrates the usage of closures in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let num = 5;
+
+    // Closure that captures `num` and adds it to the input value
+    let add_num = |x| x + num;
+
+    // Calling the closure
+    let result = add_num(10);
+    println!(&quot;Result: {}&quot;, result);
+
+    // Iterating over a vector using a closure
+    let numbers = vec![1, 2, 3, 4, 5];
+    let doubled: Vec&lt;i32&gt; = numbers.iter()
+        .map(|x| x * 2)
+        .collect();
+    println!(&quot;Doubled: {:?}&quot;, doubled);
+
+    // Using closure as a callback function
+    process_numbers(numbers, |num| {
+        println!(&quot;Processing number: {}&quot;, num);
+        // Additional logic here
+    });
+}
+
+fn process_numbers(numbers: Vec&lt;i32&gt;, callback: impl Fn(i32)) {
+    for num in numbers {
+        callback(num);
+    }
+}</code></pre></pre>
+<p>In this example, we first define a closure named <code>add_num</code> that captures the variable <code>num</code> from its surrounding environment. The closure takes an input value <code>x</code> and adds <code>num</code> to it. We then call the closure with an input value of <code>10</code> and print the result.</p>
+<p>Next, we demonstrate the use of closures in iterating over a vector. We use the <code>map()</code> method on the vector <code>numbers</code> to apply a closure that doubles each element. The resulting values are collected into a new vector named <code>doubled</code>, which is then printed.</p>
+<p>Finally, we show how closures can be used as callback functions. The <code>process_numbers()</code> function takes a vector of numbers and a closure as arguments. It iterates over the numbers and invokes the closure for each element. In this case, the closure simply prints the processed number, but you can add additional logic as needed.</p>
+<p>Closures in Rust are powerful tools for creating flexible and reusable code. They allow you to encapsulate behavior and capture variables from the surrounding context. With closures, you can write concise and expressive code, especially in scenarios where you need to pass functions as arguments or create dynamic behavior.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="intelligent-pointers"><a class="header" href="#intelligent-pointers">Intelligent pointers</a></h1>
+<p>In Rust, smart pointers, also known as intelligent pointers, are types that provide additional functionality and capabilities beyond regular references. They enable more fine-grained control over memory allocation, deallocation, and ownership. The two main smart pointer types in Rust are <code>Box&lt;T&gt;</code> and <code>Rc&lt;T&gt;</code>. Here are examples of their usage:</p>
+<ol>
+<li>Box<T>: Box is a smart pointer that allows allocating values on the heap rather than the stack. It provides ownership and automatically deallocates the memory when it goes out of scope.</li>
+</ol>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let value = Box::new(5); // Allocate an integer on the heap
+
+    println!(&quot;Value: {}&quot;, value); // Dereference the Box to access the value
+}</code></pre></pre>
+<p>In this example, we create a Box that holds an integer value of <code>5</code>. The <code>Box::new()</code> function allocates memory on the heap and returns a Box that owns the value. We can then dereference the Box using the <code>*</code> operator to access the value.</p>
+<ol start="2">
+<li>Rc<T>: Rc (Reference Counted) is a smart pointer that allows multiple ownership of a value. It keeps track of the number of references and automatically deallocates the value when the last reference goes out of scope.</li>
+</ol>
+<pre><pre class="playground"><code class="language-rust">use std::rc::Rc;
+
+fn main() {
+    let value = Rc::new(5); // Create an Rc with initial reference count of 1
+
+    let cloned_value1 = Rc::clone(&amp;value); // Create a new reference to the value
+    let cloned_value2 = Rc::clone(&amp;value);
+
+    println!(&quot;Reference count: {}&quot;, Rc::strong_count(&amp;value)); // Print the reference count
+}</code></pre></pre>
+<p>In this example, we create an Rc that holds an integer value of <code>5</code>. The <code>Rc::new()</code> function creates the Rc with an initial reference count of 1. We can clone the Rc using the <code>Rc::clone()</code> method to create additional references. The <code>Rc::strong_count()</code> function allows us to retrieve the current reference count.</p>
+<p>Smart pointers like Box and Rc provide additional memory management capabilities in Rust. They are particularly useful when dealing with dynamic-sized values or scenarios where multiple ownership or reference counting is required. By using smart pointers, you can ensure memory safety and achieve more flexible and efficient memory management in your Rust programs.</p>
+<p>Here are some examples of how to use smart pointers in Rust:</p>
+<ul>
+<li>
+<p><strong>Box<T>:</strong> The <code>Box&lt;T&gt;</code> smart pointer is used to allocate data on the heap. This can be useful for when you need to store large amounts of data or when you need to store data that will outlive the current scope. For example, the following code defines a <code>Box&lt;i32&gt;</code> smart pointer that stores the value 100:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x = Box::new(100);
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p><strong>Rc<T>:</strong> The <code>Rc&lt;T&gt;</code> smart pointer is used to count the number of references to a value. This can be useful for when you need to share data between multiple parts of your code. For example, the following code defines a <code>Rc&lt;String&gt;</code> smart pointer that stores the string &quot;Hello, world!&quot;. The <code>Rc&lt;String&gt;</code> smart pointer will keep track of the number of references to the string, and it will automatically deallocate the string when there are no more references to it.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let s = Rc::new(&quot;Hello, world!&quot;);
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p><strong>RefCell<T>:</strong> The <code>RefCell&lt;T&gt;</code> smart pointer is used to borrow data from a smart pointer. This can be useful for when you need to modify data that is stored in a smart pointer. For example, the following code defines a <code>RefCell&lt;String&gt;</code> smart pointer that stores the string &quot;Hello, world!&quot;. The <code>RefCell&lt;String&gt;</code> smart pointer allows you to borrow the string and modify it.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let s = RefCell::new(&quot;Hello, world!&quot;);
+  
+let mut borrowed_string = s.borrow_mut();
+borrowed_string.push_str(&quot;!&quot;);
+<span class="boring">}</span></code></pre></pre>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="public"><a class="header" href="#public">Public</a></h1>
+<p>In Rust, the <code>pub</code> keyword is used to control the visibility or accessibility of items such as variables, functions, structs, and modules. It specifies whether an item can be accessed from outside its current scope.</p>
+<p>Here's a breakdown of how <code>pub</code> is used with different items in Rust:</p>
+<ol>
+<li>
+<p>Public Variables:</p>
+<p>If you want a variable to be accessible from outside its current module, you can declare it as <code>pub</code>.
+Example: <code>pub const MAX_VALUE: u32 = 100;</code></p>
+</li>
+<li>
+<p>Public Functions:</p>
+<p>If you want a function to be callable from outside its current module, you can declare it as <code>pub</code>.
+Example: <code>pub fn add(a: i32, b: i32) -&gt; i32 { a + b }</code></p>
+</li>
+<li>
+<p>Public Structs:</p>
+<p>If you want a struct to be usable from outside its current module, you can declare it as <code>pub</code>.
+Example: <code>pub struct Point { x: i32, y: i32 }</code></p>
+</li>
+<li>
+<p>Public Modules:</p>
+<p>If you want a module to be accessible from outside its parent module or crate, you can declare it as <code>pub</code>.
+Example: <code>pub mod math { ... }</code></p>
+</li>
+</ol>
+<p>On the other hand, if an item (variable, function, struct, or module) is not explicitly marked as <code>pub</code>, it is considered to be private or local to its current module. Private items can only be accessed within their current module or by items that have visibility within that module.</p>
+<p>It's important to note that Rust has a strong emphasis on privacy and encourages encapsulation by default. By default, items are private unless explicitly marked as <code>pub</code>lic using the <code>pub</code> keyword. This helps promote good software design and maintainability by limiting the visibility of implementation details.</p>
+<p>In summary, <code>pub</code> is used to control the visibility of items in Rust, allowing you to specify which items can be accessed from outside their current scope. Private items are the default in Rust, and only items marked as <code>pub</code> can be accessed from outside their current module or crate.</p>
+<p>In Rust, the <code>pub</code> keyword is used to make an item public. This means that the item can be accessed from outside of its current scope. Local variables, functions, structs, and modules can all be made public.</p>
+<p>Local variables are variables that are declared within a function or block. They are only visible within the scope of the function or block in which they are declared.</p>
+<p>Functions are blocks of code that can be called from other parts of the program. They can take in arguments and return values. Functions can be made public by declaring them with the <code>pub</code> keyword.</p>
+<p>Structs are data structures that can be used to store data. They can have fields, which are variables that are associated with the struct. Structs can be made public by declaring them with the <code>pub</code> keyword.</p>
+<p>Modules are a way of organizing code in Rust. They can contain functions, structs, and other modules. Modules can be made public by declaring them with the <code>pub</code> keyword.</p>
+<p>Here are some examples of how the <code>pub</code> keyword can be used:</p>
+<pre><pre class="playground"><code class="language-rust">pub fn public_function() {
+  // This function is public and can be called from anywhere.
+}
+
+pub struct PublicStruct {
+  // This struct is public and can be accessed from anywhere.
+}
+
+pub mod public_module {
+  // This module is public and can be accessed from anywhere.
+}
+
+fn main() {
+  // This function is private and cannot be called from anywhere.
+}
+
+struct PrivateStruct {
+  // This struct is private and cannot be accessed from anywhere.
+}
+
+mod private_module {
+  // This module is private and cannot be accessed from anywhere.
+}</code></pre></pre>
+<p>The <code>pub</code> keyword is a powerful tool that can be used to control the visibility of items in Rust. It can be used to make code more reusable and easier to understand.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mod"><a class="header" href="#mod">mod</a></h1>
+<p>In Rust, a module is a collection of items, such as functions, structs, traits, impl blocks, and even other modules. Modules can be used to organize code and to control the visibility of items.</p>
+<p>To define a module, you use the <code>mod</code> keyword followed by the name of the module. For example:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>mod my_module {
+  // This is the contents of the `my_module` module.
+}
+<span class="boring">}</span></code></pre></pre>
+<p>The <code>my_module</code> module can contain any number of items. For example:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>mod my_module {
+  fn my_function() {
+    // This is the definition of the `my_function` function.
+  }
+
+  struct MyStruct {
+    // This is the definition of the `MyStruct` struct.
+  }
+}
+<span class="boring">}</span></code></pre></pre>
+<p>To access an item from a module, you use the <code>crate::module_name::item_name</code> syntax. For example, to access the <code>my_function</code> function from the <code>my_module</code> module, you would use the following syntax:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+  crate::my_module::my_function();
+}</code></pre></pre>
+<p>You can also use the <code>use</code> keyword to import a module into the current scope. This allows you to access the items in the module without having to use the <code>crate::module_name::</code> syntax. For example:</p>
+<pre><pre class="playground"><code class="language-rust">use my_module;
+
+fn main() {
+  my_function();
+}</code></pre></pre>
+<p>Here is an example of a complete Rust program that uses modules:</p>
+<pre><pre class="playground"><code class="language-rust">mod my_module {
+  pub fn my_function() {
+    println!(&quot;This is the `my_function` function from the `my_module` module.&quot;);
+  }
+
+  pub struct MyStruct {
+    pub x: i32,
+    pub y: i32,
+  }
+}
+
+fn main() {
+  // use from another file
+  //use my_module;
+
+  my_module::my_function();
+
+  let my_struct = my_module::MyStruct { x: 10, y: 20 };
+  println!(&quot;The coordinates of the `my_struct` struct are: ({}, {})&quot;, my_struct.x, my_struct.y);
+}</code></pre></pre>
+<p>This program defines two modules: the <code>my_module</code> module and the <code>main</code> module. The <code>my_module</code> module defines a function called <code>my_function</code> and a struct called <code>MyStruct</code>. The <code>main</code> module imports the <code>my_module</code> module and uses it to call the <code>my_function</code> function and to create a <code>MyStruct</code> struct.</p>
+<p>To run this program, you can save it as a file with the .rs extension and then compile it using the Rust compiler. For example, if you save the program as <code>my_program.rs</code>, you can compile it using the following command:</p>
+<pre><code>rustc my_program.rs
+</code></pre>
+<p>Once the program has been compiled, you can run it using the following command:</p>
+<pre><code>./my_program
+</code></pre>
+<p>This will print the following output:</p>
+<pre><code>This is the `my_function` function from the `my_module` module.
+The coordinates of the `my_struct` struct are: (10, 20)
+</code></pre>
+<p>In Rust, modules are used to organize code into logical units, making it easier to manage and maintain larger codebases. The <code>mod</code> keyword is used to define modules in Rust. Here's an example of how to use modules in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">// Define a module named 'my_module'
+mod my_module {
+    // Items within the module
+
+    // Define a struct
+    pub struct MyStruct {
+        // Fields of the struct
+        pub field1: i32,
+        pub field2: String,
+    }
+
+    // Define a function
+    pub fn my_function() {
+        println!(&quot;Hello from my_function!&quot;);
+    }
+}
+
+// Access items from the module
+fn main() {
+    // Create an instance of the struct
+    let my_struct = my_module::MyStruct {
+        field1: 10,
+        field2: String::from(&quot;Hello&quot;),
+    };
+
+    // Access the struct's fields
+    println!(&quot;Field 1: {}&quot;, my_struct.field1);
+    println!(&quot;Field 2: {}&quot;, my_struct.field2);
+
+    // Call the function from the module
+    my_module::my_function();
+}</code></pre></pre>
+<p>In this example, we define a module named <code>my_module</code> using the <code>mod</code> keyword. Inside the module, we can define various items such as structs, functions, enums, constants, etc. These items can be accessed using the module name followed by <code>::</code> notation.</p>
+<p>The <code>pub</code> keyword is used to specify the visibility of items within the module. If an item is marked as <code>pub</code>, it can be accessed from outside the module. If no visibility modifier is specified, the item is private to the module and cannot be accessed from outside.</p>
+<p>In the <code>main</code> function, we access the items from the <code>my_module</code> module. We create an instance of the <code>MyStruct</code> struct and access its fields. We also call the <code>my_function</code> function from the module.</p>
+<p>Note that modules can be organized in a hierarchical manner, allowing for nested modules and sub-modules. This helps in creating a logical structure for organizing code.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="working-with-files"><a class="header" href="#working-with-files">Working with files</a></h1>
+<p>Working with files in Rust involves using the standard library's <code>std::fs</code> module, which provides functions and types for file operations. Here are some examples of common file operations in Rust:</p>
+<ol>
+<li>Reading a File:</li>
+</ol>
+<pre><pre class="playground"><code class="language-rust">use std::fs::File;
+use std::io::Read;
+
+fn main() {
+    let mut file = File::open(&quot;path/to/file.txt&quot;).expect(&quot;Failed to open file&quot;);
+    let mut contents = String::new();
+    file.read_to_string(&amp;mut contents).expect(&quot;Failed to read file&quot;);
+    println!(&quot;File contents: {}&quot;, contents);
+}</code></pre></pre>
+<p>In this example, we open a file using <code>File::open</code> and read its contents into a <code>String</code> using <code>read_to_string</code>. The file path is specified as a string in the <code>open</code> function.</p>
+<ol start="2">
+<li>Writing to a File:</li>
+</ol>
+<pre><pre class="playground"><code class="language-rust">use std::fs::File;
+use std::io::Write;
+
+fn main() {
+    let mut file = File::create(&quot;path/to/file.txt&quot;).expect(&quot;Failed to create file&quot;);
+    file.write_all(b&quot;Hello, world!&quot;).expect(&quot;Failed to write to file&quot;);
+}</code></pre></pre>
+<p>In this example, we create a file using <code>File::create</code> and write data to it using <code>write_all</code>. The data to be written is specified as a byte slice (<code>b&quot;Hello, world!&quot;</code>).</p>
+<ol start="3">
+<li>Appending to a File:</li>
+</ol>
+<pre><pre class="playground"><code class="language-rust">use std::fs::OpenOptions;
+use std::io::Write;
+
+fn main() {
+    let mut file = OpenOptions::new()
+        .append(true)
+        .open(&quot;path/to/file.txt&quot;)
+        .expect(&quot;Failed to open file for appending&quot;);
+    file.write_all(b&quot;New content&quot;).expect(&quot;Failed to append to file&quot;);
+}</code></pre></pre>
+<p>In this example, we open a file in append mode using <code>OpenOptions</code> and the <code>append</code> method. We then write data to the file using <code>write_all</code>, which appends the data to the existing content.</p>
+<ol start="4">
+<li>Deleting a File:</li>
+</ol>
+<pre><pre class="playground"><code class="language-rust">use std::fs;
+
+fn main() {
+    fs::remove_file(&quot;path/to/file.txt&quot;).expect(&quot;Failed to delete file&quot;);
+}</code></pre></pre>
+<p>In this example, we use the <code>remove_file</code> function from the <code>std::fs</code> module to delete a file. The file path is specified as a string.</p>
+<p>These are just a few examples of working with files in Rust. The <code>std::fs</code> module provides additional functions and types for file operations, such as renaming files, creating directories, reading metadata, and more. You can refer to the Rust documentation for more details on file-related operations: <a href="https://doc.rust-lang.org/std/fs/index.html">std::fs - Rust Documentation</a></p>
+<p>Sure. Here are some examples of how to work with files in Rust:</p>
+<ul>
+<li><strong>Opening a file:</strong> To open a file, you can use the <code>File::open()</code> method. This method takes a path to the file as an argument and returns a <code>File</code> object. For example:</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">use std::fs::File;
+
+fn main() {
+  let file = File::open(&quot;my_file.txt&quot;).unwrap();
+}</code></pre></pre>
+<p>The <code>unwrap()</code> method will panic if the file could not be opened.</p>
+<ul>
+<li><strong>Reading from a file:</strong> To read from a file, you can use the <code>read()</code> method. This method takes a buffer as an argument and reads data from the file into the buffer. For example:</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">use std::fs::File;
+use std::io::Read;
+
+fn main() {
+  let mut file = File::open(&quot;my_file.txt&quot;).unwrap();
+  let mut buffer = Vec::new();
+  file.read(&amp;mut buffer).unwrap();
+
+  println!(&quot;{}&quot;, buffer);
+}</code></pre></pre>
+<p>The <code>Vec::new()</code> method creates a new vector of bytes. The <code>file.read(&amp;mut buffer)</code> method reads data from the file into the buffer. The <code>unwrap()</code> method will panic if the file could not be read.</p>
+<ul>
+<li><strong>Writing to a file:</strong> To write to a file, you can use the <code>write()</code> method. This method takes a buffer as an argument and writes the data from the buffer to the file. For example:</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">use std::fs::File;
+use std::io::Write;
+
+fn main() {
+  let mut file = File::create(&quot;my_file.txt&quot;).unwrap();
+  file.write(b&quot;Hello, world!&quot;).unwrap();
+}</code></pre></pre>
+<p>The <code>File::create()</code> method creates a new file if it does not exist. The <code>file.write(b&quot;Hello, world!&quot;)</code> method writes the string &quot;Hello, world!&quot; to the file. The <code>unwrap()</code> method will panic if the file could not be written to.</p>
+<ul>
+<li><strong>Closing a file:</strong> When you are finished with a file, you should close it using the <code>close()</code> method. This method ensures that the file is properly closed and that any resources associated with the file are released. For example:</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">use std::fs::File;
+use std::io::Read;
+
+fn main() {
+  let mut file = File::open(&quot;my_file.txt&quot;).unwrap();
+  let mut buffer = Vec::new();
+  file.read(&amp;mut buffer).unwrap();
+
+  println!(&quot;{}&quot;, buffer);
+
+  file.close().unwrap();
+}</code></pre></pre>
+<p>The <code>file.close()</code> method closes the file. The <code>unwrap()</code> method will panic if the file could not be closed.</p>
+<p>Here are some additional resources that you may find helpful:</p>
+<ul>
+<li>The Rust File I/O Guide: https://doc.rust-lang.org/std/fs/index.html</li>
+<li>The Rust io crate: https://doc.rust-lang.org/std/io/index.html</li>
 </ul>
 
                     </main>

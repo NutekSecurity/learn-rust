@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Intelligent pointers - learn-rust</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../chapter_1/first_of_all.html"><strong aria-hidden="true">1.</strong> First of all</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter_1/prerequisites.html"><strong aria-hidden="true">1.1.</strong> Prerequisites</a></li><li class="chapter-item expanded "><a href="../chapter_1/installing.html"><strong aria-hidden="true">1.2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../chapter_1/problems.html"><strong aria-hidden="true">1.3.</strong> Problems occur</a></li></ol></li><li class="chapter-item expanded "><a href="../tour/drumroll.html"><strong aria-hidden="true">2.</strong> Tour de Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tour/simple_variables.html"><strong aria-hidden="true">2.1.</strong> Simple variables</a></li><li class="chapter-item expanded "><a href="../tour/complex_types.html"><strong aria-hidden="true">2.2.</strong> Complex types</a></li><li class="chapter-item expanded "><a href="../tour/methods_on_types.html"><strong aria-hidden="true">2.3.</strong> Methods on types</a></li><li class="chapter-item expanded "><a href="../tour/options.html"><strong aria-hidden="true">2.4.</strong> Options</a></li><li class="chapter-item expanded "><a href="../tour/result.html"><strong aria-hidden="true">2.5.</strong> Result</a></li><li class="chapter-item expanded "><a href="../tour/if_let.html"><strong aria-hidden="true">2.6.</strong> if let</a></li><li class="chapter-item expanded "><a href="../tour/match.html"><strong aria-hidden="true">2.7.</strong> match</a></li><li class="chapter-item expanded "><a href="../tour/ownership.html"><strong aria-hidden="true">2.8.</strong> Ownership</a></li><li class="chapter-item expanded "><a href="../tour/errors.html"><strong aria-hidden="true">2.9.</strong> Error handling</a></li><li class="chapter-item expanded "><a href="../tour/user_input.html"><strong aria-hidden="true">2.10.</strong> User input</a></li><li class="chapter-item expanded "><a href="../tour/argv.html"><strong aria-hidden="true">2.11.</strong> Command line arguments</a></li><li class="chapter-item expanded "><a href="../tour/functions.html"><strong aria-hidden="true">2.12.</strong> Functions</a></li><li class="chapter-item expanded "><a href="../tour/loops.html"><strong aria-hidden="true">2.13.</strong> Loops</a></li><li class="chapter-item expanded "><a href="../tour/if_else.html"><strong aria-hidden="true">2.14.</strong> if, else if, else</a></li><li class="chapter-item expanded "><a href="../tour/mut_variables.html"><strong aria-hidden="true">2.15.</strong> On variables and mutability</a></li><li class="chapter-item expanded "><a href="../tour/generic_types.html"><strong aria-hidden="true">2.16.</strong> Generic types</a></li><li class="chapter-item expanded "><a href="../tour/traits.html"><strong aria-hidden="true">2.17.</strong> Traits</a></li><li class="chapter-item expanded "><a href="../tour/testing.html"><strong aria-hidden="true">2.18.</strong> Testing code</a></li><li class="chapter-item expanded "><a href="../tour/iterators.html"><strong aria-hidden="true">2.19.</strong> Iterators</a></li><li class="chapter-item expanded "><a href="../tour/closures.html"><strong aria-hidden="true">2.20.</strong> Closures</a></li><li class="chapter-item expanded "><a href="../tour/smart_pointers.html" class="active"><strong aria-hidden="true">2.21.</strong> Intelligent pointers</a></li><li class="chapter-item expanded "><a href="../tour/public.html"><strong aria-hidden="true">2.22.</strong> Public</a></li><li class="chapter-item expanded "><a href="../tour/mod.html"><strong aria-hidden="true">2.23.</strong> mod</a></li><li class="chapter-item expanded "><a href="../tour/files.html"><strong aria-hidden="true">2.24.</strong> Working with files</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">learn-rust</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="intelligent-pointers"><a class="header" href="#intelligent-pointers">Intelligent pointers</a></h1>
+<p>In Rust, smart pointers, also known as intelligent pointers, are types that provide additional functionality and capabilities beyond regular references. They enable more fine-grained control over memory allocation, deallocation, and ownership. The two main smart pointer types in Rust are <code>Box&lt;T&gt;</code> and <code>Rc&lt;T&gt;</code>. Here are examples of their usage:</p>
+<ol>
+<li>Box<T>: Box is a smart pointer that allows allocating values on the heap rather than the stack. It provides ownership and automatically deallocates the memory when it goes out of scope.</li>
+</ol>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let value = Box::new(5); // Allocate an integer on the heap
+
+    println!(&quot;Value: {}&quot;, value); // Dereference the Box to access the value
+}</code></pre></pre>
+<p>In this example, we create a Box that holds an integer value of <code>5</code>. The <code>Box::new()</code> function allocates memory on the heap and returns a Box that owns the value. We can then dereference the Box using the <code>*</code> operator to access the value.</p>
+<ol start="2">
+<li>Rc<T>: Rc (Reference Counted) is a smart pointer that allows multiple ownership of a value. It keeps track of the number of references and automatically deallocates the value when the last reference goes out of scope.</li>
+</ol>
+<pre><pre class="playground"><code class="language-rust">use std::rc::Rc;
+
+fn main() {
+    let value = Rc::new(5); // Create an Rc with initial reference count of 1
+
+    let cloned_value1 = Rc::clone(&amp;value); // Create a new reference to the value
+    let cloned_value2 = Rc::clone(&amp;value);
+
+    println!(&quot;Reference count: {}&quot;, Rc::strong_count(&amp;value)); // Print the reference count
+}</code></pre></pre>
+<p>In this example, we create an Rc that holds an integer value of <code>5</code>. The <code>Rc::new()</code> function creates the Rc with an initial reference count of 1. We can clone the Rc using the <code>Rc::clone()</code> method to create additional references. The <code>Rc::strong_count()</code> function allows us to retrieve the current reference count.</p>
+<p>Smart pointers like Box and Rc provide additional memory management capabilities in Rust. They are particularly useful when dealing with dynamic-sized values or scenarios where multiple ownership or reference counting is required. By using smart pointers, you can ensure memory safety and achieve more flexible and efficient memory management in your Rust programs.</p>
+<p>Here are some examples of how to use smart pointers in Rust:</p>
+<ul>
+<li>
+<p><strong>Box<T>:</strong> The <code>Box&lt;T&gt;</code> smart pointer is used to allocate data on the heap. This can be useful for when you need to store large amounts of data or when you need to store data that will outlive the current scope. For example, the following code defines a <code>Box&lt;i32&gt;</code> smart pointer that stores the value 100:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x = Box::new(100);
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p><strong>Rc<T>:</strong> The <code>Rc&lt;T&gt;</code> smart pointer is used to count the number of references to a value. This can be useful for when you need to share data between multiple parts of your code. For example, the following code defines a <code>Rc&lt;String&gt;</code> smart pointer that stores the string &quot;Hello, world!&quot;. The <code>Rc&lt;String&gt;</code> smart pointer will keep track of the number of references to the string, and it will automatically deallocate the string when there are no more references to it.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let s = Rc::new(&quot;Hello, world!&quot;);
+<span class="boring">}</span></code></pre></pre>
+</li>
+<li>
+<p><strong>RefCell<T>:</strong> The <code>RefCell&lt;T&gt;</code> smart pointer is used to borrow data from a smart pointer. This can be useful for when you need to modify data that is stored in a smart pointer. For example, the following code defines a <code>RefCell&lt;String&gt;</code> smart pointer that stores the string &quot;Hello, world!&quot;. The <code>RefCell&lt;String&gt;</code> smart pointer allows you to borrow the string and modify it.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let s = RefCell::new(&quot;Hello, world!&quot;);
+  
+let mut borrowed_string = s.borrow_mut();
+borrowed_string.push_str(&quot;!&quot;);
+<span class="boring">}</span></code></pre></pre>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../tour/closures.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../tour/public.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../tour/closures.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../tour/public.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
