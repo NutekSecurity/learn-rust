@@ -105,3 +105,5 @@ Here are some of the basic commands that you can use to interact with tmux:
 - `Ctrl + b` then `x` to kill the current pane
 - `Ctrl + b` then `z` to toggle zoom on the current pane
 - `Ctrl + b` then `Arrow Key` to move the current pane
+
+![Alacritty and tmux in action](Alacritty_TMUX.png)

@@ -1,11 +1,11 @@
 # Summary
 
-[Introduction](README.md)
+<!-- [Introduction](README.md) -->
 
-- [First of all](./chapter_1/first_of_all.md)
-    - [Prerequisites](./chapter_1/prerequisites.md)
-    - [Installation](./chapter_1/installing.md)
-    - [Problems occur](./chapter_1/problems.md)
+<!-- - [First of all](./chapter_1/first_of_all.md) -->
+<!--     - [Prerequisites](./chapter_1/prerequisites.md) -->
+<!--     - [Installation](./chapter_1/installing.md) -->
+<!--     - [Problems occur](./chapter_1/problems.md) -->
 - [Tour de Rust](./tour/drumroll.md)
     - [Simple variables](./tour/simple_variables.md)
     - [Complex types](./tour/complex_types.md)
@@ -31,3 +31,7 @@
     - [Public](./tour/public.md)
     - [mod](./tour/mod.md)
     - [Working with files](./tour/files.md)
+    - [Borrowing and dereferencing](./tour/borrowing_dereferencing.md)
+    - [unsafe](./tour/unsafe.md)
+    - [Keywords](./tour/keywords.md)
+<!-- - [Configuration](./configuration/intro.md) -->
