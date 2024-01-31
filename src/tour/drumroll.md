@@ -6,4 +6,4 @@ If you're already familiar with Rust, or you do know much about programming and 
 
 __P.S.__ You can run examples right in the browser to see the output, but you can't edit them.
 
-<iframe src="https://github.com/sponsors/nutek-terminal/card" title="Sponsor nutek-terminal" height="225" width="600" style="border: 0;"></iframe>
+<iframe src="https://github.com/sponsors/NutekSecurity/card" title="Sponsor nutek-terminal" height="225" width="600" style="border: 0;"></iframe>
